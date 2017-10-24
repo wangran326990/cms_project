@@ -1,0 +1,12 @@
+com/cms/basic/model/User.class
+com/cms/core/dao/TestUserDao.class
+com/cms/basic/test/util/AbstractDbUnitTestCase.class
+com/cms/core/test/util/EntitiesHelper.class
+com/cms/basic/dao/TestUserDao.class
+com/cms/basic/test/util/EntitiesHelper.class
+com/cms/core/test/util/AbstractDbUnitTestCase.class
+com/cms/basic/dao/UserDao.class
+com/cms/service/TestUserService.class
+com/cms/basic/dao/IUserDao.class
+com/cms/basic/test/util/DbUtil.class
+com/cms/core/test/util/DbUtil.class

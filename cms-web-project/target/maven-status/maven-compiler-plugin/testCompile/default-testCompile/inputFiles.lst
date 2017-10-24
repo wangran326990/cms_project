@@ -1,0 +1,12 @@
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/basic/dao/UserDao.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/basic/model/User.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/basic/dao/IUserDao.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/core/test/util/DbUtil.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/service/TestUserService.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/basic/dao/TestUserDao.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/core/dao/TestUserDao.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/basic/test/util/DbUtil.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/basic/test/util/EntitiesHelper.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/core/test/util/EntitiesHelper.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/basic/test/util/AbstractDbUnitTestCase.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/core/test/util/AbstractDbUnitTestCase.java
