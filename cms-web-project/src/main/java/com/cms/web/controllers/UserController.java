@@ -5,7 +5,9 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.cms.core.model.User;
 import com.cms.service.IUserService;
 
 
@@ -28,5 +30,11 @@ public class UserController {
 	public String list(Model model){
 		model.addAttribute("datas",userService.findUser());
 		return "user/list";
+	}
+	
+	@RequestMapping(value="/add", method=RequestMethod.GET)
+	public String add(Model model){
+		model.addAttribute("user", new User());
+		return "user/add";
 	}
 }
