@@ -27,4 +27,20 @@
 	<bean id="groupDao" class="org.easymock.EasyMock" factory-method="createStrictMock">
 		<constructor-arg value="com.cms.core.dao.IGroupDao"/>
 	</bean>
+	
+	<bean id="userService" class="com.cms.service.UserService">
+		<property name="userDao" ref="userDao"></property>
+		<property name="roleDao" ref="roleDao"></property>
+		<property name="groupDao" ref="groupDao"></property>
+	</bean>
+	
+	<bean id="groupService" class="com.cms.service.GroupService">
+		<property name="userDao" ref="userDao"></property>
+		<property name="groupDao" ref="groupDao"></property>
+	</bean>
+	
+	<bean id="roleService" class="com.cms.service.RoleService">
+		<property name="userDao" ref="userDao"></property>
+		<property name="roleDao" ref="roleDao"></property>
+	</bean>
 </beans>

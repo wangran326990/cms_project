@@ -19,7 +19,7 @@ public class EntitiesHelper {
 		
 	}
 	
-	public static void assertRole(List<Role> expected,List<Role> actuals) {
+	public static void assertRoles(List<Role> expected,List<Role> actuals) {
 		for(int i=0;i<expected.size();i++) {
 			Role er = expected.get(i);
 			Role ar = actuals.get(i);
@@ -67,10 +67,19 @@ public class EntitiesHelper {
 		}
 	}
 	
+	public static void assertGroups(List<Group> expected, List<Group> actuals){
+		for(int i=0; i<expected.size(); i++){
+			Group ge = expected.get(i);
+			Group ga = actuals.get(i);
+			assertGroup(ge, ga);
+		}
+	}
+	
 	public static void assertGroup(Group expected, Group actuals ){
 		Assert.assertNotNull(expected);
 		Assert.assertEquals(expected.getId(), actuals.getId());
 		Assert.assertEquals(expected.getName(), actuals.getName());
 		Assert.assertEquals(expected.getDescription(), actuals.getDescription());
 	}
+	
 }

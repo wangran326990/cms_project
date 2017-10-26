@@ -21,6 +21,11 @@ public class GroupDao extends BaseDao<Group> implements IGroupDao {
 	public Pager<Group> findGroups() {
 		return this.find("from Group");
 	}
+
+	@Override
+	public void deleteUsersFromGroup(int gid) {
+		this.updateByHql("delete UserGroup ug where ug.group.id=?", gid);
+	}
 	
 
 }

@@ -1,0 +1,19 @@
+package com.cms.core.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestRoleDao {
+
+	@Test
+	public void testListRoles() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDeleteRoleUsers() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,81 @@
+/**
+ * 
+ */
+package com.cms.service;
+
+import java.util.List;
+
+import com.cms.basic.model.Pager;
+import com.cms.core.dao.IGroupDao;
+import com.cms.core.dao.IUserDao;
+import com.cms.core.model.Group;
+
+/**
+ * @author wr
+ *
+ */
+public class GroupService implements IGroupService {
+	
+	private IGroupDao groupDao;
+	private IUserDao userDao;
+
+	/* (non-Javadoc)
+	 * @see com.cms.service.IGroupService#add(com.cms.core.model.Group)
+	 */
+	@Override
+	public void add(Group group) {
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see com.cms.service.IGroupService#delete(int)
+	 */
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see com.cms.service.IGroupService#load(int)
+	 */
+	@Override
+	public Group load(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.cms.service.IGroupService#update(com.cms.core.model.Group)
+	 */
+	@Override
+	public void update(Group group) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see com.cms.service.IGroupService#listGroup()
+	 */
+	@Override
+	public List<Group> listGroup() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.cms.service.IGroupService#findGroup()
+	 */
+	@Override
+	public Pager<Group> findGroup() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteGroupUsers(int gid) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

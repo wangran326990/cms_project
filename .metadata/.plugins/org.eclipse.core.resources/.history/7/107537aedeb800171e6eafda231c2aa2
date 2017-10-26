@@ -1,0 +1,11 @@
+package com.cms.service;
+
+import com.cms.core.model.Group;
+
+public interface IGroupService {
+	
+	public void add(Group group);
+	 
+	public void delete(int id);
+	
+}

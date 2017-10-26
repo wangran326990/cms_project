@@ -1,0 +1,24 @@
+package com.cms.core.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestGroupDao {
+
+	@Test
+	public void testListGroups() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFindGroups() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDeleteUsersFromGroup() {
+		fail("Not yet implemented");
+	}
+
+}

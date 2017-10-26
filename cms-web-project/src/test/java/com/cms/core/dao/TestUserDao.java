@@ -73,7 +73,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 		List<Role> actuals = Arrays.asList(new Role(2, "artical_publisher", RoleType.ROLE_PUBLISHER),
 										   new Role(3, "artical_auditor", RoleType.ROLE_AUDIT));
 		List<Role> roles = userDao.listUserRoles(2);
-		EntitiesHelper.assertRole(roles, actuals);
+		EntitiesHelper.assertRoles(roles, actuals);
 	
 		
 	}

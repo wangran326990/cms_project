@@ -1,0 +1,52 @@
+package com.cms.service;
+
+import static org.junit.Assert.*;
+
+import javax.annotation.Resource;
+
+import org.junit.Test;
+
+import com.cms.core.dao.IGroupDao;
+import com.cms.core.dao.IUserDao;
+
+public class TestGroupService {
+	@Resource(name="groupDao")
+	private IGroupDao groupDao;
+	private IUserDao userDao;
+	
+	@Test
+	public void testAdd() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDelete() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testLoad() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testUpdate() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testListGroup() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFindGroup() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDeleteGroupUsers() {
+		fail("Not yet implemented");
+	}
+
+}

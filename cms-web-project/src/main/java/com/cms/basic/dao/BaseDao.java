@@ -250,7 +250,7 @@ public class BaseDao<T> implements IBaseDao<T> {
 	public void updateByHql(String hql, Object[] args) {
 		
 		Query query = getSession().createQuery(hql);
-		setParameter(args, query);
+		this.setParameter(args, query);
 		query.executeUpdate();
 		
 	}

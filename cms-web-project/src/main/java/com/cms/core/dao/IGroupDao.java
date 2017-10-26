@@ -9,5 +9,5 @@ import com.cms.core.model.Group;
 public interface IGroupDao extends IBaseDao<Group> {
 		public List<Group> listGroups();
 		public Pager<Group> findGroups();
-		
+		public void deleteUsersFromGroup(int gid);
 }

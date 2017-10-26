@@ -1,0 +1,43 @@
+package com.cms.core.dao;
+
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import org.dbunit.dataset.DataSetException;
+import org.hibernate.Session;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.orm.hibernate4.SessionHolder;
+import org.springframework.transaction.support.TransactionSynchronizationManager;
+
+import com.cms.core.test.util.AbstractDbUnitTestCase;
+
+public class TestGroupDao extends AbstractDbUnitTestCase{
+
+	@Before
+	public void setUp() throws DataSetException, SQLException, IOException{
+		this.backupAllTable();
+		Session s = sessionFactory.openSession();
+		TransactionSynchronizationManager.bindResource(sessionFactory, new SessionHolder(s));
+
+		
+	}
+	
+	@Test
+	public void testListGroups() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFindGroups() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDeleteUsersFromGroup() {
+		fail("Not yet implemented");
+	}
+
+}

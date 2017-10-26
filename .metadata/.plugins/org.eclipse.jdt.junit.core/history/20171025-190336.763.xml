@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRoleDao" project="cms-web-project" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cms.core.dao.TestRoleDao" time="6.397">
+    <testcase name="testListRoles" classname="com.cms.core.dao.TestRoleDao" time="3.46"/>
+    <testcase name="testDeleteRoleUsers" classname="com.cms.core.dao.TestRoleDao" time="2.936"/>
+  </testsuite>
+</testrun>
