@@ -100,4 +100,10 @@ public class GroupService implements IGroupService {
 		groupDao.deleteUsersFromGroup(gid);
 	}
 
+	@Override
+	public List<User> listGroupUsers(int gid) {
+		List<User> users =userDao.listUsersByGroup(gid);
+		return users;
+	}
+
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="com.cms.core.dao" project="cms-web-project" tests="18" started="18" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cms.core.dao.TestRoleDao" time="5.703">
+    <testcase name="testDeleteRoleUsers" classname="com.cms.core.dao.TestRoleDao" time="2.832"/>
+    <testcase name="testListRoles" classname="com.cms.core.dao.TestRoleDao" time="2.871"/>
+  </testsuite>
+  <testsuite name="com.cms.core.dao.TestUserDao" time="36.556">
+    <testcase name="testListUsersByRole" classname="com.cms.core.dao.TestUserDao" time="2.783"/>
+    <testcase name="testListUserGroupIds" classname="com.cms.core.dao.TestUserDao" time="2.812"/>
+    <testcase name="testListUserByGroup" classname="com.cms.core.dao.TestUserDao" time="3.127"/>
+    <testcase name="testAddUserGroup" classname="com.cms.core.dao.TestUserDao" time="2.99"/>
+    <testcase name="testLoadUserGroup" classname="com.cms.core.dao.TestUserDao" time="2.616"/>
+    <testcase name="testLoadUserRole" classname="com.cms.core.dao.TestUserDao" time="2.578"/>
+    <testcase name="testDeleteUserRoles" classname="com.cms.core.dao.TestUserDao" time="2.807"/>
+    <testcase name="testDeleteUserGroups" classname="com.cms.core.dao.TestUserDao" time="2.915"/>
+    <testcase name="testDeleteUserRole" classname="com.cms.core.dao.TestUserDao" time="2.759"/>
+    <testcase name="testDeleteUserGroup" classname="com.cms.core.dao.TestUserDao" time="2.717"/>
+    <testcase name="testListUserRole" classname="com.cms.core.dao.TestUserDao" time="2.646"/>
+    <testcase name="testListRoleIds" classname="com.cms.core.dao.TestUserDao" time="2.925"/>
+    <testcase name="testAddUserRole" classname="com.cms.core.dao.TestUserDao" time="2.881"/>
+  </testsuite>
+  <testsuite name="com.cms.core.dao.TestGroupDao" time="9.435">
+    <testcase name="testListGroups" classname="com.cms.core.dao.TestGroupDao" time="3.06"/>
+    <testcase name="testFindGroups" classname="com.cms.core.dao.TestGroupDao" time="2.993"/>
+    <testcase name="testDeleteUsersFromGroup" classname="com.cms.core.dao.TestGroupDao" time="3.381"/>
+  </testsuite>
+</testrun>

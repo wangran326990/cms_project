@@ -62,9 +62,7 @@ public class UserService implements IUserService {
 		
 				userDao.deleteUserRoles(id);
 		
-		
-		
-		userDao.delete(id);
+				userDao.delete(id);
 	}
 
 	@Override
@@ -98,6 +96,8 @@ public class UserService implements IUserService {
 				userDao.deleteUserGroup(user.getId(), gid);
 			}
 		}
+		//userDao.update(user);
+		//System.out.println("finished update");
 	}
 
 	@Override
@@ -158,6 +158,30 @@ public class UserService implements IUserService {
 	@Resource(name="groupDao")
 	public void setGroupDao(IGroupDao groupDao) {
 		this.groupDao = groupDao;
+	}
+
+	@Override
+	public Integer[] getUserRoleIds(int userId) {
+		List<Integer> roleIds =this.userDao.listUserRoleIds(userId);
+		return (Integer[])roleIds.toArray();
+	}
+
+	@Override
+	public Integer[] getUserGroupIds(int userId) {
+		List<Integer> groupIds =this.userDao.listUserGroupIds(userId);
+		return (Integer[])groupIds.toArray();
+	}
+
+	@Override
+	public List<Integer> listUserRoleIds(int userId) {
+		// TODO Auto-generated method stub
+		return this.userDao.listUserRoleIds(userId);
+	}
+
+	@Override
+	public List<Integer> listUserGroupIds(int userId) {
+		// TODO Auto-generated method stub
+		return this.userDao.listUserGroupIds(userId);
 	}
 	
 	

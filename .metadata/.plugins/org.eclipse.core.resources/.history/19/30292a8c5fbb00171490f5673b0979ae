@@ -1,0 +1,14 @@
+package com.cms.web.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cms.service.IRoleService;
+
+@RequestMapping("/admin/role")
+@Controller
+public class RoleController {
+	
+		IRoleService roleService;
+		
+}

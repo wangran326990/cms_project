@@ -1,14 +1,21 @@
 package com.cms.web.controllers;
 
+import java.util.List;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.cms.core.errors.CmsException;
 import com.cms.core.model.User;
 import com.cms.dto.UserDto;
 import com.cms.service.IGroupService;
@@ -79,5 +86,60 @@ public class UserController {
 		return "redirect:/admin/user/users";
 	}
 	
+	@RequestMapping(value="/delete/{id}", method = RequestMethod.GET)
+	public String delete(@PathVariable int id){
+		userService.delete(id);
+		return "redirect:/admin/user/users";
+	}
+	
+	@RequestMapping(value="/updateStatus/{id}", method = RequestMethod.GET)
+	public String updateStatus(@PathVariable int id){
+		userService.updateStatus(id);
+		return "redirect:/admin/user/users";
+	}
+	
+	//update 
+	
+	@RequestMapping(value="/update/{id}", method=RequestMethod.GET)
+	public String update(@PathVariable int id, Model model){
+		User user = userService.loadUser(id);
+		List<Integer> roleIds = userService.listUserRoleIds(id);
+		List<Integer> groupIds = userService.listUserGroupIds(id);
+		model.addAttribute("userDto", new UserDto(user,roleIds,groupIds));
+		this.initAddUser(model);
+		return "user/update";
+	}
+	
+	@RequestMapping(value="/update/{id}", method=RequestMethod.POST)
+	public String update(@PathVariable int id, @Valid UserDto userDto, BindingResult br, Model model){
+		if(br.hasErrors()){
+			this.initAddUser(model);
+			return "user/update";
+		}
+		User ou = userService.loadUser(id);
+		ou.setNickname(userDto.getNickname());
+		ou.setPhone(userDto.getPhone());
+		ou.setEmail(userDto.getEmail());
+		ou.setStatus(userDto.getStatus());
+		userService.update(ou, userDto.getRoleIds(), userDto.getGroupIds());
+		return "redirect:/admin/user/users";
+	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
+	public String show(@PathVariable int id, Model model){
+		//userService.loadUser(id);
+		model.addAttribute("user", userService.loadUser(id));
+		model.addAttribute("gs", userService.listUserGroups(id));
+		model.addAttribute("rs", userService.listUserRoles(id));
+		return "user/show";
+	}
+	
+	
+	
+//	@ExceptionHandler(CmsException.class)
+//	private String handleException(CmsException cmsException,HttpServletRequest req){
+//		req.setAttribute("exceptions", cmsException);
+//		return "error";
+//	}
 	
 }

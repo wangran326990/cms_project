@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestGroupDao" project="cms-web-project" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cms.core.dao.TestGroupDao" time="8.491">
+    <testcase name="testListGroups" classname="com.cms.core.dao.TestGroupDao" time="3.354"/>
+    <testcase name="testFindGroups" classname="com.cms.core.dao.TestGroupDao" time="2.656"/>
+    <testcase name="testDeleteUsersFromGroup" classname="com.cms.core.dao.TestGroupDao" time="2.481"/>
+  </testsuite>
+</testrun>

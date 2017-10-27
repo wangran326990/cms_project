@@ -193,22 +193,22 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 		Assert.assertTrue(ugs.size()<=0);
 	}
 	
-//	@Test
-//	public void testFindUser() throws DatabaseUnitException, SQLException{
-//		IDataSet ds = createDateSet("t_core");
-//		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
+	@Test
+	public void testFindUser() throws DatabaseUnitException, SQLException{
+		IDataSet ds = createDateSet("t_core");
+		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 //		SystemContext.setPageSize(3);
 //		SystemContext.setPageOffset(0);
-//		Pager<User> users =userDao.findUser();
-//		List<User> expected = users.getDatas();
-//		List<User> actual = Arrays.asList(new User(1,"admin1","123","admin1","admin1@admin.com","110",1), 
-//				 						  new User(2,"admin2","123","admin1","admin1@admin.com","110",1),
-//				 						  new User(3,"admin3","123","admin1","admin1@admin.com","110",1));
+		Pager<User> users =userDao.findUser();
+		List<User> expected = users.getDatas();
+		List<User> actual = Arrays.asList(new User(1,"admin1","123","admin1","admin1@admin.com","110",1), 
+				 						  new User(2,"admin2","123","admin1","admin1@admin.com","110",1),
+				 						  new User(3,"admin3","123","admin1","admin1@admin.com","110",1));
 //		Assert.assertEquals(users.getOffset(), 0);
 //		Assert.assertEquals(users.getSize(), 3);
 //		Assert.assertEquals(users.getTotal(), 3);
-//		EntitiesHelper.assertUsers(expected, actual);
-//	}
+		EntitiesHelper.assertUsers(expected, actual);
+	}
 	
 	@Test
 	public void testDeleteUserRole() throws DatabaseUnitException, SQLException{

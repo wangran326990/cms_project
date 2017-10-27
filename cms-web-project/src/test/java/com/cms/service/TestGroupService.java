@@ -57,27 +57,49 @@ public class TestGroupService {
 
 	@Test
 	public void testLoad() {
-		fail("Not yet implemented");
+		
+		int gid =1;
+		Group group = new Group(4, "testGroup", "test Group Description");
+		reset(groupDao);
+		expect(groupDao.load(gid)).andReturn(group);
+		replay(groupDao);
+		groupService.load(gid);
+		verify(groupDao);
+		
 	}
 
 	@Test
 	public void testUpdate() {
-		fail("Not yet implemented");
+		
+		Group group = new Group(4, "testGroup", "test Group Description");
+		reset(groupDao);
+		groupDao.update(group);
+		expectLastCall();
+		replay(groupDao);
+		groupService.update(group);
+		verify(groupDao);
 	}
 
 	@Test
 	public void testListGroup() {
-		fail("Not yet implemented");
+		List<Group> groups = Arrays.asList(new Group(), new Group());
+		reset(groupDao);
+		expect(groupDao.listGroups()).andReturn(groups);
+		replay(groupDao);
+		groupService.listGroup();
+		verify(groupDao);
 	}
 
-	@Test
-	public void testFindGroup() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testDeleteGroupUsers() {
-		fail("Not yet implemented");
+		int gid =1;
+		reset(groupDao);
+		groupDao.deleteUsersFromGroup(gid);
+		expectLastCall();
+		replay(groupDao);
+		groupService.deleteGroupUsers(gid);
+		verify(groupDao);
 	}
 
 }

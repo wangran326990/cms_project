@@ -35,7 +35,7 @@
 		<property name="maxIdle" value="20" />
 		<property name="maxWait" value="1000" />
 	</bean>
-	<context:property-placeholder location="classpath:jdbc.properties"/>
+	<context:property-placeholder location="classpath:jdbc-test.properties"/>
 	<!--创建Spring的SessionFactory工厂 -->
 	<!-- 
 	和hibernate4整合没有提供专门的针对Annotation的类，直接在LocalSessionFactoryBean中已经集成

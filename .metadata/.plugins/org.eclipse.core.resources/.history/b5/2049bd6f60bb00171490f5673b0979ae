@@ -1,0 +1,41 @@
+package com.cms.web.controllers;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cms.service.IGroupService;
+import com.cms.service.IRoleService;
+import com.cms.service.IUserService;
+
+@RequestMapping("/admin/role")
+@Controller
+public class RoleController {
+	
+	
+		IRoleService roleService;
+		IUserService userService;
+		
+		public IRoleService getRoleService() {
+			return roleService;
+		}
+		
+		@Resource(name="roleService")
+		public void setRoleService(IRoleService roleService) {
+			this.roleService = roleService;
+		}
+		
+		public IUserService getUserService() {
+			return userService;
+		}
+		
+		@Resource(name="userService")
+		public void setUserService(IUserService userService) {
+			this.userService = userService;
+		}
+		
+		public String list(){
+			return "role/list";
+		}
+}

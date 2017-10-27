@@ -3,6 +3,7 @@ package com.cms.service;
 import java.util.List;
 
 import com.cms.core.model.Role;
+import com.cms.core.model.User;
 
 public interface IRoleService {
 	
@@ -17,5 +18,7 @@ public interface IRoleService {
 	public List<Role> listRole();
 	
 	public void deleteRoleUsers(int id);
+	
+	public List<User> listRoleUsers(int rid);
 	
 }

@@ -17,5 +17,11 @@
 		<property name="suffix" value=".jsp"/>
 	</bean>
 	
-	
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="com.cms.core.errors.CmsException">error</prop>
+			</props>
+		</property>
+	</bean>
 </beans>

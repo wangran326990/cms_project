@@ -1,5 +1,7 @@
 package com.cms.core.model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -30,7 +32,7 @@ public class User {
 	private Date createDate;
 	
 	public User(){
-		
+		this.createDate = new Date(); 
 	}
 	
 	public User(int id, String username, String password, String nickname, String email, String phone, int status) {
@@ -42,11 +44,9 @@ public class User {
 		this.email = email;
 		this.phone = phone;
 		this.status = status;
+		this.createDate = new Date(); 
 	}
 
-	public User(int i, String string) {
-		// TODO Auto-generated constructor stub
-	}
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {

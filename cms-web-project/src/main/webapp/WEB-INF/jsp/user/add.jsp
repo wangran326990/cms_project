@@ -24,37 +24,37 @@ $(function(){
 	</h3>
 	<sf:form method="post" modelAttribute="userDto" id="addForm">
 	<table width="800" cellspacing="0" cellPadding="0">
-		<thead><tr><td colspan="2">添加用户功能</td></tr></thead>
+		<thead><tr><td colspan="2">Add User</td></tr></thead>
 		<tr>
-			<td class="rightTd" width="200px">用户名(必须是英文):</td>
+			<td class="rightTd" width="200px">username: </td>
 			<td class="leftTd"><sf:input path="username" size="30"/><sf:errors cssClass="errorContainer" path="username"/></td>
 		</tr>
 		<tr>
-			<td class="rightTd">显示名称(可以是中文):</td><td class="leftTd"><sf:input path="nickname" size="30"/></td>
+			<td class="rightTd">Nickname: </td><td class="leftTd"><sf:input path="nickname" size="30"/></td>
 		</tr>
 		<tr>
-			<td class="rightTd">用户密码:</td><td><sf:password path="password" size="30"/><sf:errors cssClass="errorContainer" path="password"/></td>
+			<td class="rightTd">Password: </td><td><sf:password path="password" size="30"/><sf:errors cssClass="errorContainer" path="password"/></td>
 		</tr>
 		<tr>
-			<td class="rightTd">确认密码:</td><td><input type="password" id="confirmPwd" name="confirmPwd" size="30"/></td>
+			<td class="rightTd">Confirm password: </td><td><input type="password" id="confirmPwd" name="confirmPwd" size="30"/></td>
 		</tr>
 		<tr>
-			<td class="rightTd">联系电话:</td><td><sf:input path="phone" size="30"/></td>
+			<td class="rightTd">Telephone: </td><td><sf:input path="phone" size="30"/></td>
 		</tr>
 		<tr>
-			<td class="rightTd">电子邮件:</td><td><sf:input path="email" size="30"/><sf:errors path="email"/></td>
+			<td class="rightTd">Email: </td><td><sf:input path="email" size="30"/><sf:errors path="email"/></td>
 		</tr>
 		<tr>
-			<td class="rightTd">状态:</td>
+			<td class="rightTd">Status: </td>
 			<td>
 				<sf:select path="status">
-					<sf:option value="0">停用</sf:option>
-					<sf:option value="1">启用</sf:option>
+					<sf:option value="0">ON</sf:option>
+					<sf:option value="1">OFF</sf:option>
 				</sf:select>
 			</td>
 		</tr>
 		<tr>
-		  <td class="rightTd">角色:</td>
+		  <td class="rightTd">Role: </td>
 			<td>
 				<%-- <c:forEach var="role" items="${roles }">
 					${role.descr }<input type="checkbox" name="roleIds" value="${role.id }"/>
@@ -63,7 +63,7 @@ $(function(){
 			</td>
 		</tr>
 		<tr>
-			 <td class="rightTd">用户组:</td>
+			 <td class="rightTd">Group: </td>
 			<td>
 				<%-- <c:forEach var="role" items="${roles }">
 					${role.descr }<input type="checkbox" name="roleIds" value="${role.id }"/>
@@ -72,7 +72,7 @@ $(function(){
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" class="centerTd"><input type="submit" value="添加用户"/><input type="reset"/></td>
+			<td colspan="2" class="centerTd"><input type="submit" value="add user"/> <input type="reset"/></td>
 		</tr>
 	</table>
 	</sf:form>

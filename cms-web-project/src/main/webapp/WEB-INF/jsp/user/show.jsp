@@ -52,12 +52,12 @@
 			<td class="rightTd">拥有角色:</td>
 			<td>
 				<c:forEach items="${rs }" var="r">
-				<c:if test="${isAdmin}">
+				<c:if test="${not isAdmin}">
 					<a href="<%=request.getContextPath()%>/admin/role/${r.id}" class="list_op">
 					[${r.name }]
 					</a>&nbsp;
 				</c:if>
-				<c:if test="${not isAdmin}">
+				<c:if test="${isAdmin}">
 					[${r.name }]
 				</c:if>	
 				</c:forEach>
@@ -67,10 +67,10 @@
 			<td class="rightTd">所在用户组:</td>
 			<td>
 				<c:forEach items="${gs }" var="g">
-				<c:if test="${isAdmin}">
+				<c:if test="${not isAdmin}">
 					<a href="<%=request.getContextPath()%>/admin/group/${g.id}" class="list_op">[${g.name }]</a>&nbsp;
 				</c:if>
-				<c:if test="${not isAdmin}">
+				<c:if test="${isAdmin}">
 					[${g.name }]
 				</c:if>
 				</c:forEach>
@@ -78,10 +78,10 @@
 		</tr>
 		<tr>
 			<td colspan="2" class="centerTd">
-				<c:if test="${isAdmin}">
+				<c:if test="${not isAdmin}">
 				<a href="update/${user.id }" class="list_op">修改用户</a>
 				</c:if>
-				<c:if test="${not isAdmin}">
+				<c:if test="${isAdmin}">
 				<a href="updateSelf" class="list_op">修改个人信息</a>
 				</c:if>
 			</td>

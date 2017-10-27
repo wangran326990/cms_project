@@ -1,0 +1,13 @@
+package com.cms.web.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/admin/group")
+public class GroupController {
+	
+	public String list(){
+		return "group/list";
+	}
+}

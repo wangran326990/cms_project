@@ -141,4 +141,5 @@ public interface IUserDao extends IBaseDao<User> {
 	public void deleteUserRole(int userId, int roleId);
 	
 	public void deleteUserGroup(int userId, int groupId);
+	
 }

@@ -18,12 +18,14 @@ com/cms/core/dao/UserDao.class
 com/cms/dto/UserDto.class
 com/cms/basic/dao/IBaseDao.class
 com/cms/core/dao/IUserDao.class
+com/cms/web/controllers/RoleController.class
 com/cms/core/model/Articals.class
 com/cms/core/model/UserGroup.class
 com/cms/basic/dao/BaseDao.class
 com/cms/core/dao/IRoleDao.class
 com/cms/basic/model/SystemContext.class
 com/cms/core/model/Group.class
+com/cms/web/controllers/GroupController.class
 com/cms/core/dao/RoleDao.class
 com/cms/service/IGroupService.class
 com/cms/core/errors/CmsException.class

@@ -1,8 +1,10 @@
 package com.cms.dto;
 
-import javax.validation.constraints.NotNull;
+
+import java.util.List;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import com.cms.core.model.User;
 
@@ -26,7 +28,7 @@ public class UserDto {
 		this.id = id;
 	}
 	
-	@NotNull(message="username is required")
+	@NotEmpty(message="username is required")
 	public String getUsername() {
 		return username;
 	}
@@ -35,7 +37,7 @@ public class UserDto {
 		this.username = username;
 	}
 	
-	@NotNull(message="password is required")
+	@NotEmpty(message="password is required")
 	public String getPassword() {
 		return password;
 	}
@@ -127,6 +129,26 @@ public class UserDto {
 		setStatus(user.getStatus());
 		setGroupIds(groupIds);
 		setRoleIds(roleIds);
+	}
+	
+	public UserDto(User user, List<Integer> roleIds, List<Integer> groupIds){
+		setId(user.getId());
+		setEmail(user.getEmail());
+		setNickname(user.getNickname());
+		setPhone(user.getPhone());
+		setPassword(user.getPassword());
+		setUsername(user.getUsername());
+		setStatus(user.getStatus());
+		setGroupIds(listToArray(groupIds));
+		setRoleIds(listToArray(roleIds));
+	}
+	
+	private Integer[] listToArray(List<Integer> list){
+			Integer[] ids = new Integer[list.size()];
+			for(int i=0; i<ids.length; i++){
+				ids[i] = list.get(i).intValue();
+			}
+			return ids;
 	}
 	
 	public UserDto(){

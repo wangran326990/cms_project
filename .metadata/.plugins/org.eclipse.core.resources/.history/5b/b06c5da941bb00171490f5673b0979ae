@@ -1,0 +1,23 @@
+package com.cms.web.controllers;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cms.service.IGroupService;
+
+@Controller
+@RequestMapping("/admin/group")
+public class GroupController {
+	
+	@Resource(name="groupService")
+	IGroupService groupService;
+	
+	public String list(Model model){
+		
+		groupService.listGroup();
+		return "group/list";
+	}
+}

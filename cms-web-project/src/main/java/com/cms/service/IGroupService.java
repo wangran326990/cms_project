@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.cms.basic.model.Pager;
 import com.cms.core.model.Group;
+import com.cms.core.model.User;
 
 public interface IGroupService {
 	
@@ -20,4 +21,6 @@ public interface IGroupService {
 	public Pager<Group> findGroup();
 	
 	public void deleteGroupUsers(int gid);
+	
+	public List<User> listGroupUsers(int gid);
 }
