@@ -1,0 +1,10 @@
+package com.cms.core.model;
+
+public enum ChannelType {
+	NAV_CHANNEL("NAVIGATION BAR"),TOPIC_LIST("TOPIC LIST"),TOPIC_CONTENT("TOPIC CONTENT"),TOPIC_IMG;
+	
+	private String name;
+	private ChannelType(String name){
+		this.name= name;
+	}
+}

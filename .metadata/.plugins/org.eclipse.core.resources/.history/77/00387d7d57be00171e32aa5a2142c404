@@ -1,0 +1,15 @@
+package com.cms.core.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestEnum {
+
+	@Test
+	public void testEnumToOrdinal() {
+		
+	}
+
+
+}

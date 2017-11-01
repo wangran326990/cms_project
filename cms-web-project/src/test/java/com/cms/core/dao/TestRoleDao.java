@@ -71,7 +71,7 @@ public class TestRoleDao extends AbstractDbUnitTestCase{
 	}
 	
 	@After
-	public void tearDown() throws FileNotFoundException, DatabaseUnitException, SQLException {
+	public void tearDown() throws DatabaseUnitException, SQLException, IOException {
 		
 		SessionHolder holder = (SessionHolder) TransactionSynchronizationManager.getResource(sessionFactory);
 		Session s = holder.getSession(); 

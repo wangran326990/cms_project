@@ -66,7 +66,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test
-	public void testListUserRole() throws DatabaseUnitException, SQLException {
+	public void testListUserRole() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException {
 		// TODO Auto-generated method stub
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
@@ -79,7 +79,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test
-	public void testListRoleIds() throws DatabaseUnitException, SQLException{
+	public void testListRoleIds() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException{
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		List<Integer> actuals = Arrays.asList(2,3);
@@ -88,7 +88,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test
-	public void testListUsersByRole() throws DatabaseUnitException, SQLException{
+	public void testListUsersByRole() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException{
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		List<User> actuals = Arrays.asList(new User(2,"admin2","123","admin1","admin1@admin.com","110",1),
@@ -98,7 +98,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 
 	@Test
-	public void testListUserGroupIds() throws DatabaseUnitException, SQLException{
+	public void testListUserGroupIds() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException{
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		List<Integer> actuals = Arrays.asList(1,3);
@@ -107,7 +107,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test
-	public void testListUserByGroup() throws DatabaseUnitException, SQLException{
+	public void testListUserByGroup() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException{
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		List<User> actuals = Arrays.asList(new User(2,"admin2","123","admin1","admin1@admin.com","110",1),
@@ -118,7 +118,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test
-	public void testAddUserRole() throws DatabaseUnitException, SQLException{
+	public void testAddUserRole() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException{
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		Role role = roleDao.load(1);
@@ -131,7 +131,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test
-	public void testAddUserGroup() throws DatabaseUnitException, SQLException{
+	public void testAddUserGroup() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException{
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		Group group = groupDao.load(1);
@@ -144,7 +144,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test
-	public void testLoadUserGroup() throws DatabaseUnitException, SQLException {
+	public void testLoadUserGroup() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException {
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		int uid =2;
@@ -159,7 +159,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test 
-	public void testLoadUserRole() throws DatabaseUnitException, SQLException{
+	public void testLoadUserRole() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException{
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		int uid=2;
@@ -174,7 +174,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test 
-	public void testDeleteUserRoles() throws DatabaseUnitException, SQLException{
+	public void testDeleteUserRoles() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException{
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		
@@ -184,7 +184,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test 
-	public void testDeleteUserGroups() throws DatabaseUnitException, SQLException{
+	public void testDeleteUserGroups() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException{
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		
@@ -194,7 +194,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test
-	public void testFindUser() throws DatabaseUnitException, SQLException{
+	public void testFindUser() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException{
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 //		SystemContext.setPageSize(3);
@@ -211,7 +211,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test
-	public void testDeleteUserRole() throws DatabaseUnitException, SQLException{
+	public void testDeleteUserRole() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException{
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		userDao.deleteUserRole(1, 1);
@@ -221,7 +221,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	
 	@Test
-	public void testDeleteUserGroup() throws DatabaseUnitException, SQLException{
+	public void testDeleteUserGroup() throws DatabaseUnitException, SQLException, FileNotFoundException, IOException{
 		IDataSet ds = createDateSet("t_core");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		userDao.deleteUserGroup(2, 1);
@@ -230,7 +230,7 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 		
 	}
 	@After
-	public void tearDown() throws FileNotFoundException, DatabaseUnitException, SQLException {
+	public void tearDown() throws DatabaseUnitException, SQLException, IOException {
 		
 		SessionHolder holder = (SessionHolder) TransactionSynchronizationManager.getResource(sessionFactory);
 		Session s = holder.getSession(); 

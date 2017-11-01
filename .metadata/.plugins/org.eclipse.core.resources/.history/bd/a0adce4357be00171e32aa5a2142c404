@@ -1,0 +1,24 @@
+package com.cms.core.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestEnum {
+
+	@Test
+	public void testEnumToOrdinal() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testEnumToName() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testEnumToMap() {
+		fail("Not yet implemented");
+	}
+
+}

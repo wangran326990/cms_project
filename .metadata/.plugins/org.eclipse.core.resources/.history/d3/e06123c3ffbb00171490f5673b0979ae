@@ -1,0 +1,9 @@
+package com.cms.core.model;
+
+public enum ChannelType {
+	NAV_CHANNEL,TOPIC_LIST,TOPIC_CONTENT,TOPIC_IMG;
+	
+	private ChannelType(){
+		
+	}
+}

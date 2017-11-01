@@ -1,0 +1,25 @@
+package com.cms.core.dao;
+
+import java.util.List;
+
+import com.cms.basic.dao.BaseDao;
+import com.cms.core.model.Channel;
+
+public class ChannelDao extends BaseDao<Channel> implements IChannelDao {
+
+
+
+	@Override
+	public List<Channel> listByParent(int pid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getMaxOrderByParent(int pid) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+}

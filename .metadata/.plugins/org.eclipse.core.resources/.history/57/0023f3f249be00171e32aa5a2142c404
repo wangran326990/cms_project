@@ -1,0 +1,27 @@
+package com.cms.core.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.cms.basic.dao.BaseDao;
+import com.cms.core.model.Channel;
+
+@Repository("channelDao")
+public class ChannelDao extends BaseDao<Channel> implements IChannelDao {
+
+
+
+	@Override
+	public List<Channel> listByParent(int pid) {
+		return null;
+	}
+
+	@Override
+	public int getMaxOrderByParent(int pid) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+}

@@ -1,0 +1,72 @@
+package com.cms.basic.util;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+@SuppressWarnings("rawtypes")
+public class EnumUtil {
+	
+	public static List<Integer> enumToOrdinal(Class<? extends Enum> clz){
+		if(!clz.isEnum()) return null;
+		
+		Enum[] enums = clz.getEnumConstants();
+		List<Integer> rels = new ArrayList<>();
+		for(Enum en: enums){
+			rels.add(en.ordinal());
+		}
+		return  rels;
+	}
+	
+	public static List<String> enumToName(Class<? extends Enum> clz){
+		if(!clz.isEnum()) return null;
+		Enum[] enums = clz.getEnumConstants();
+		List<String> rels = new ArrayList<>();
+		for(Enum en : enums){
+			rels.add(en.name());
+		}
+		return rels;
+	}
+	
+	public static Map<Integer, String> enumToMap(Class<? extends Enum> clz){
+		if(!clz.isEnum()) return null;
+		Enum[] enums = clz.getEnumConstants();
+		Map<Integer, String> relsMap = new HashMap<>();
+		for(Enum en :enums){
+			relsMap.put(en.ordinal(), en.name());
+		}
+		return relsMap;
+	}
+	
+	public static List<String> 	enumPropToList(Class<? extends Enum> clz, String propName){
+			String methodName = "get"+propName.substring(0, 1).toUpperCase(); 
+			Enum[] enums = clz.getEnumConstants();
+			List<String> results = new ArrayList<String>();
+		try {
+			Method method = clz.getMethod(methodName, null);
+			for(Enum en: enums){
+					System.out.println(method.invoke(en,null));
+			}
+			
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		
+	}
+}

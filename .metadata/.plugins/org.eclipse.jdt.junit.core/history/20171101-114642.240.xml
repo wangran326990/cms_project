@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="com.cms.core.dao" project="cms-web-project" tests="23" started="23" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cms.core.dao.TestEnum" time="1.818">
+    <testcase name="testEnumToName" classname="com.cms.core.dao.TestEnum" time="0.0"/>
+    <testcase name="testEnumProp" classname="com.cms.core.dao.TestEnum" time="1.818"/>
+  </testsuite>
+  <testsuite name="com.cms.core.dao.TestRoleDao" time="9.106">
+    <testcase name="testListRoles" classname="com.cms.core.dao.TestRoleDao" time="4.581"/>
+    <testcase name="testDeleteRoleUsers" classname="com.cms.core.dao.TestRoleDao" time="4.525"/>
+  </testsuite>
+  <testsuite name="com.cms.core.dao.TestChannelDao" time="7.218">
+    <testcase name="testListByParent" classname="com.cms.core.dao.TestChannelDao" time="3.463"/>
+    <testcase name="testGetMaxOrderByParent" classname="com.cms.core.dao.TestChannelDao" time="3.754"/>
+  </testsuite>
+  <testsuite name="com.cms.core.dao.TestUserDao" time="60.026">
+    <testcase name="testListUsersByRole" classname="com.cms.core.dao.TestUserDao" time="4.153"/>
+    <testcase name="testListUserGroupIds" classname="com.cms.core.dao.TestUserDao" time="3.56"/>
+    <testcase name="testListUserByGroup" classname="com.cms.core.dao.TestUserDao" time="3.638"/>
+    <testcase name="testAddUserRole" classname="com.cms.core.dao.TestUserDao" time="4.451"/>
+    <testcase name="testAddUserGroup" classname="com.cms.core.dao.TestUserDao" time="4.83"/>
+    <testcase name="testLoadUserGroup" classname="com.cms.core.dao.TestUserDao" time="3.936"/>
+    <testcase name="testLoadUserRole" classname="com.cms.core.dao.TestUserDao" time="4.271"/>
+    <testcase name="testDeleteUserRoles" classname="com.cms.core.dao.TestUserDao" time="4.605"/>
+    <testcase name="testListUserRole" classname="com.cms.core.dao.TestUserDao" time="4.027"/>
+    <testcase name="testListRoleIds" classname="com.cms.core.dao.TestUserDao" time="3.95"/>
+    <testcase name="testDeleteUserGroups" classname="com.cms.core.dao.TestUserDao" time="4.763"/>
+    <testcase name="testFindUser" classname="com.cms.core.dao.TestUserDao" time="4.827"/>
+    <testcase name="testDeleteUserRole" classname="com.cms.core.dao.TestUserDao" time="4.172"/>
+    <testcase name="testDeleteUserGroup" classname="com.cms.core.dao.TestUserDao" time="4.843"/>
+  </testsuite>
+  <testsuite name="com.cms.core.dao.TestGroupDao" time="12.278">
+    <testcase name="testListGroups" classname="com.cms.core.dao.TestGroupDao" time="4.235"/>
+    <testcase name="testFindGroups" classname="com.cms.core.dao.TestGroupDao" time="4.037"/>
+    <testcase name="testDeleteUsersFromGroup" classname="com.cms.core.dao.TestGroupDao" time="4.006"/>
+  </testsuite>
+</testrun>

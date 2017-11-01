@@ -1,0 +1,8 @@
+package com.cms.basic.util;
+
+import java.util.List;
+
+public class EnumUtil {
+	
+	public static List<Integer> enumToOrdinal(Class<? extends Enum>)
+}

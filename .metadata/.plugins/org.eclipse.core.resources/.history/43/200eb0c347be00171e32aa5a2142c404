@@ -1,0 +1,51 @@
+package com.cms.core.dao;
+
+import java.util.List;
+
+import com.cms.core.model.Channel;
+
+public class ChannelDao implements IChannelDao {
+
+	@Override
+	public Channel add(Channel t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void update(Channel t) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Channel load(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Channel get(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Channel> listByParent(int pid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getMaxOrderByParent(int pid) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
