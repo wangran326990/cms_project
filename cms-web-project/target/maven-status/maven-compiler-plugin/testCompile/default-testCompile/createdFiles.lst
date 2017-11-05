@@ -2,10 +2,12 @@ com/cms/basic/model/User.class
 com/cms/core/dao/TestRoleDao.class
 com/cms/core/dao/TestGroupDao.class
 com/cms/core/dao/TestUserDao.class
+com/cms/core/dao/TestEnum.class
 com/cms/basic/test/util/AbstractDbUnitTestCase.class
 com/cms/core/test/util/EntitiesHelper.class
 com/cms/basic/dao/TestUserDao.class
 com/cms/basic/test/util/EntitiesHelper.class
+com/cms/core/dao/TestChannelDao.class
 com/cms/core/test/util/AbstractDbUnitTestCase.class
 com/cms/service/TestGroupService.class
 com/cms/basic/dao/UserDao.class

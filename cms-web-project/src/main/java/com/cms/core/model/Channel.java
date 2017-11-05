@@ -12,6 +12,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name="t_channel")
 public class Channel {
+	public static final String ROOT_NAME="website system management channel";
+	public static final int ROOT_ID =0;
+	
 	private int id;
 	private String name;
 	private int customLink;

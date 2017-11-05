@@ -1,0 +1,55 @@
+package com.cms.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.cms.core.dao.IChannelDao;
+import com.cms.core.model.Channel;
+
+@Service("channelService")
+public class ChannelService implements IChannelDao {
+	private IChannelDao channelDao;
+	@Override
+	public Channel add(Channel t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void update(Channel t) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Channel load(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Channel get(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Channel> listByParent(Integer pid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getMaxOrderByParent(Integer pid) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

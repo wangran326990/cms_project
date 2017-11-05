@@ -4,6 +4,7 @@ import java.util.List;
 
 import junit.framework.Assert;
 
+import com.cms.core.model.Channel;
 import com.cms.core.model.Group;
 import com.cms.core.model.Role;
 import com.cms.core.model.User;
@@ -80,6 +81,26 @@ public class EntitiesHelper {
 		Assert.assertEquals(expected.getId(), actuals.getId());
 		Assert.assertEquals(expected.getName(), actuals.getName());
 		Assert.assertEquals(expected.getDescription(), actuals.getDescription());
+	}
+	
+	public static void assertChannel(Channel expected, Channel actuals){
+		Assert.assertNotNull(expected);
+		Assert.assertEquals(expected.getId(), actuals.getId());
+		Assert.assertEquals(expected.getName(), actuals.getName());
+		Assert.assertEquals(expected.getIsIndex(), actuals.getIsIndex());
+		Assert.assertEquals(expected.getCustomLink(), actuals.getCustomLink());
+		Assert.assertEquals(expected.getCustomLinkUrl(), actuals.getCustomLinkUrl());
+		Assert.assertEquals(expected.getIsRecmd(), actuals.getIsRecmd());
+		Assert.assertEquals(expected.getIsTopNav(), actuals.getIsTopNav());
+		Assert.assertEquals(expected.getOrders(), actuals.getOrders());
+		Assert.assertEquals(expected.getStatus(), actuals.getStatus());
+		Assert.assertEquals(expected.getType(), actuals.getType());
+	}
+	
+	public static void assertChannels(List<Channel> expected, List<Channel> actuals){
+		for(int i=0; i<expected.size(); i++){
+			assertChannel(expected.get(i), actuals.get(i));
+		}
 	}
 	
 }

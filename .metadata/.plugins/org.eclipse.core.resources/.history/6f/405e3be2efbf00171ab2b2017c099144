@@ -1,0 +1,40 @@
+package com.cms.web.controllers;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cms.basic.util.JsonUtil;
+import com.cms.core.model.ChannelTree;
+import com.cms.service.IChannelService;
+
+@Controller
+@RequestMapping("/admin/channel")
+public class ChannelController {
+	
+	private IChannelService channelService;
+	
+	@RequestMapping("/channels")
+	public String list(Model model){
+		List<ChannelTree> tree = channelService.generateTree();
+		String jsonDatas = JsonUtil.getInstance().obj2json(tree);
+		model.addAttribute("treeDatas", ChannelTree);
+		return "channel/list";
+	}
+
+	public IChannelService getChannelService() {
+		return channelService;
+	}
+
+	
+	@Resource(name="channelService")
+	public void setChannelService(IChannelService channelService) {
+		this.channelService = channelService;
+	}
+	
+	
+}

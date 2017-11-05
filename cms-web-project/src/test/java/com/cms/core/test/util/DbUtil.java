@@ -10,7 +10,7 @@ public class DbUtil {
 	public static Connection getConnection() throws SQLException {
 		Connection con = null;
 		//sessionVariables = FOREIGN_KEY_CHECK=0 means ignore forign key relevance
-		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_cms_test?sessionVariables=FOREIGN_KEY_CHECKS=0", 
+		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_cms?sessionVariables=FOREIGN_KEY_CHECKS=0", 
 				"root", "326990");
 		return con;
 	}

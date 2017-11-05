@@ -37,7 +37,7 @@ $(function(){
 	<h3 class="navTitle">
 		<span class="navTilteTxt">文章管理</span>
 	</h3>
-	<c:if test="${isAdmin }">
+	<c:if test="${isAdmin || true}">
 	<li class="navChild">
 		<a href="<%=request.getContextPath() %>/admin/channel/channels" target="content">栏目信息管理</a>
 	</li>
@@ -46,7 +46,7 @@ $(function(){
 		<a href="<%=request.getContextPath() %>/admin/topic/audits" target="content">文章信息管理</a>
 	</li>
 </ul>
-<c:if test="${isAdmin }">
+<c:if test="${isAdmin || true}">
 	<ul class="navMenu navSelected">
 		<h3 class="navTitle">
 			<span class="navTilteTxt">系统配置</span>

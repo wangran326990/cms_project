@@ -1,0 +1,64 @@
+package com.cms.service;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.cms.core.dao.IChannelDao;
+import com.cms.core.model.Channel;
+
+@Service("channelService")
+public class ChannelService implements IChannelService {
+	
+	private IChannelDao channelDao;
+	
+
+	public IChannelDao getChannelDao() {
+		return channelDao;
+	}
+	
+	@Resource(name="channelDao")
+	public void setChannelDao(IChannelDao channelDao) {
+		this.channelDao = channelDao;
+	}
+
+	@Override
+	public void add(Channel channel, Integer pid) {
+		if(pid !=null && pid>0){
+			Channel pc = channelDao.load(pid);
+		}
+	}
+
+	@Override
+	public void update(Channel channel) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void clearTopic(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Channel load(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Channel> listByParentId(Integer pid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

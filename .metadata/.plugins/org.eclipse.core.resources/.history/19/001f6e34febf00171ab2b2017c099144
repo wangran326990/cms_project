@@ -1,0 +1,6 @@
+package com.cms.dto;
+
+public class TreeDto {
+	private int id;
+	private String name;
+}
