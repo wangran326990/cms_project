@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="t_channel")
@@ -69,6 +72,9 @@ public class Channel {
 	public void setId(int id) {
 		this.id = id;
 	}
+	@Column(name="name")
+	@NotEmpty(message="栏目名称不能为空")
+	//@NotEmpty(message="channel name is required")
 	public String getName() {
 		return name;
 	}

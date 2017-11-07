@@ -93,6 +93,7 @@ public final class list_005fchild_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\tif($(\"#refresh\").val()==\"1\") {\r\n");
       out.write("\t\tparent.refreshTree();\r\n");
       out.write("\t}\r\n");
+      out.write("   // parent.refreshTree();\r\n");
       out.write("\t$(\".listTable\").mysorttable();\r\n");
       out.write("});\r\n");
       out.write("</script>\r\n");
@@ -177,6 +178,8 @@ public final class list_005fchild_jsp extends org.apache.jasper.runtime.HttpJspB
             out.write("\t\t\t\t\t<a href=\"");
             out.print(request.getContextPath() );
             out.write("/admin/channel/update/");
+            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pid}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+            out.write('/');
             out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${c.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
             out.write("\" class=\"list_op\">\r\n");
             out.write("\t\t\t\t\t更新</a>\r\n");

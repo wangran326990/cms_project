@@ -20,6 +20,7 @@ $(function(){
 	if($("#refresh").val()=="1") {
 		parent.refreshTree();
 	}
+   // parent.refreshTree();
 	$(".listTable").mysorttable();
 });
 </script>
@@ -61,7 +62,7 @@ $(function(){
 				<c:if test="${c.status eq 1 }"><span class="emp">停用</span></c:if>
 				&nbsp;</td>
 				<td class="centerTd">
-					<a href="<%=request.getContextPath() %>/admin/channel/update/${c.id}" class="list_op">
+					<a href="<%=request.getContextPath() %>/admin/channel/update/${pid}/${c.id}" class="list_op">
 					更新</a>
 					<a href="<%=request.getContextPath() %>/admin/channel/delete/${pid}/${c.id}"  class="list_op delete">删除</a>
 				</td>

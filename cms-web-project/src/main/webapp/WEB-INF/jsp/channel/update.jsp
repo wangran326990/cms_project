@@ -59,8 +59,8 @@ $(function(){
 		</tr>
 		<tr>
 			<td class="rightTd">是否是推荐栏目:</td>
-			<td><sf:radiobutton path="recommend" value="0"/>不是
-				<sf:radiobutton path="recommend" value="1"/>是</td>
+			<td><sf:radiobutton path="isRecmd" value="0"/>不是
+				<sf:radiobutton path="isRecmd" value="1"/>是</td>
 		</tr>
 		<tr>
 			<td class="rightTd">状态:</td>
@@ -69,12 +69,7 @@ $(function(){
 				<sf:radiobutton path="status" value="1"/>停用
 			</td>
 		</tr>
-		<tr>
-			<td class="rightTd">导航序号:</td>
-			<td>
-				<sf:input path="navOrder" size="50"/>
-			</td>
-		</tr>
+		
 		<tr>
 			<td colspan="2" class="centerTd"><input type="submit" value="更新栏目"/><input type="reset"/></td>
 		</tr>

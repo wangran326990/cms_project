@@ -66,5 +66,12 @@ public class ChannelDao extends BaseDao<Channel> implements IChannelDao {
 		
 	}
 
+	@Override
+	public void updateSort(Integer[] ids) {
+		for(int i=0; i<ids.length;i++){
+			this.load(ids[i]).setOrders(i+1);	
+		}
+	}
+
 	
 }

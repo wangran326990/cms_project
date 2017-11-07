@@ -53,11 +53,16 @@ public final class inc_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/admin/channel/add/");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pid}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\" class=\"admin_link\">添加子栏目</a>\r\n");
+      out.write("<!-- <a href=\"");
+      out.print(request.getContextPath() );
+      out.write("/admin/channel/channels/");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pid}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("/-1\" class=\"admin_link\">子栏目列表</a> -->\r\n");
       out.write("<a href=\"");
       out.print(request.getContextPath() );
       out.write("/admin/channel/channels/");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pid}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/-1\" class=\"admin_link\">子栏目列表</a>\r\n");
+      out.write("\" class=\"admin_link\">子栏目列表</a>\r\n");
       out.write("</span>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

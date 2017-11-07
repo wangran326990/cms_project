@@ -52,8 +52,11 @@ public class ChannelService implements IChannelService {
 		if(cs != null && cs.size()>0){
 			throw new CmsException("Channel has child channel connot be deleted !!");
 		}
+		
 		//2, need to check if artical exist
 		//3, need to delete group channel relationship
+		
+		channelDao.delete(id);
 	}
 
 	@Override
@@ -85,6 +88,11 @@ public class ChannelService implements IChannelService {
 	@Override
 	public List<ChannelTree> generateTreeByParent(Integer pid) {
 		return channelDao.generateTreeByParent(pid);
+	}
+
+	@Override
+	public void updateSort(Integer[] ids) {
+		channelDao.updateSort(ids);
 	}
 
 }
