@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestChannelDao" project="cms-web-project" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="com.cms.core.dao.TestChannelDao" time="2.262">
-    <testcase name="testListByParent" classname="com.cms.core.dao.TestChannelDao" time="1.095"/>
-    <testcase name="testGetMaxOrderByParent" classname="com.cms.core.dao.TestChannelDao" time="1.167"/>
-  </testsuite>
-</testrun>

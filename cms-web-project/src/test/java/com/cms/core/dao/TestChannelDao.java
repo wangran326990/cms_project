@@ -24,6 +24,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
+import com.cms.basic.model.SystemContext;
 import com.cms.core.model.Channel;
 import com.cms.core.model.ChannelTree;
 import com.cms.core.model.ChannelType;
@@ -93,8 +94,11 @@ public class TestChannelDao extends AbstractDbUnitTestCase{
 		}
 	}
 	
+	
 	@After
 	public void tearDown() throws DatabaseUnitException, SQLException, IOException {	
+		SystemContext.setOrder("asc");
+		SystemContext.setSort("id");
 		SessionHolder holder = (SessionHolder) TransactionSynchronizationManager.getResource(sessionFactory);
 		Session s = holder.getSession(); 
 		s.flush();

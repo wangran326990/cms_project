@@ -1,0 +1,7 @@
+package com.cms.core.model;
+
+public class GroupChannel {
+	private int id;
+	private Group group;
+	private GroupChannel channel;
+}

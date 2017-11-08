@@ -1,5 +1,0 @@
-package com.cms.service;
-
-public interface IGroupService {
-	public void add(Group group)
-}

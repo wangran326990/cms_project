@@ -1,8 +1,0 @@
-package com.cms.core.dao;
-
-import com.cms.basic.dao.IBaseDao;
-import com.cms.core.model.Channel;
-
-public interface IChannelDao extends IBaseDao<Channel> {
-
-}

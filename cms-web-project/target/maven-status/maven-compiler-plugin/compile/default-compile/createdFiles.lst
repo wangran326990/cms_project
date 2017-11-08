@@ -21,6 +21,7 @@ com/cms/core/model/ChannelTree.class
 com/cms/dto/UserDto.class
 com/cms/basic/dao/IBaseDao.class
 com/cms/core/dao/IUserDao.class
+com/cms/core/model/GroupChannel.class
 com/cms/web/controllers/RoleController.class
 com/cms/core/model/Articals.class
 com/cms/core/model/UserGroup.class

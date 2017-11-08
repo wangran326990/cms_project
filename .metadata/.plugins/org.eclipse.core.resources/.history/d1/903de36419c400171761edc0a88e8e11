@@ -1,0 +1,85 @@
+package com.cms.core.dao;
+
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.cms.basic.dao.BaseDao;
+import com.cms.basic.model.Pager;
+import com.cms.core.model.Channel;
+import com.cms.core.model.ChannelTree;
+import com.cms.core.model.Group;
+import com.cms.core.model.GroupChannel;
+
+@Repository("groupDao")
+public class GroupDao extends BaseDao<Group> implements IGroupDao {
+
+	@Override
+	public List<Group> listGroups() {
+		return this.list("from Group");
+	}
+
+	@Override
+	public Pager<Group> findGroups() {
+		return this.find("from Group");
+	}
+
+	@Override
+	public void deleteUsersFromGroup(int gid) {
+		this.updateByHql("delete UserGroup ug where ug.group.id=?", gid);
+	}
+
+	@Override
+	public void addGroupChannel(Group group, Channel channel) {
+		GroupChannel gc = this.loadGroupChannel(group.getId(), channel.getId());
+		if(gc!=null) return;
+		gc = new GroupChannel();
+		gc.setGroup(group);
+		gc.setChannel(channel);
+		this.getSession().save(gc);
+		
+	}
+
+	@Override
+	public GroupChannel loadGroupChannel(int gid, int cid) {
+		// TODO Auto-generated method stub
+		String hql = "from GroupChannel gc where gc.group.id=? and gc.channel.id=?";
+		Object[] args = {gid,cid};
+		return (GroupChannel) this.queryObject(hql, args);
+	}
+
+	@Override
+	public List<Integer> listGroupChannelIds(int gid) {
+		String sql ="select id from t_group_channel where g_id = ?";
+		Object arg = gid;
+		return this.listBySql(sql, arg, GroupChannel.class, true);
+	}
+
+	@Override
+	public List<ChannelTree> generateGroupChannelTree(int gid) {
+		String sql = "select c.id, c.name, c.pid from channel c
+		return null;
+	}
+
+	@Override
+	public List<ChannelTree> generateUserChannelTree(int uid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteGroupChannel(int gid, int cid) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void clearGroupChannels(int gid) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

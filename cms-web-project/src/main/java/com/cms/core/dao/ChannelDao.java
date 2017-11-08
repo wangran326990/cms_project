@@ -12,7 +12,16 @@ import com.cms.core.model.ChannelTree;
 public class ChannelDao extends BaseDao<Channel> implements IChannelDao {
 
 
-
+	public static void initTreeNode(List<ChannelTree> cts){
+		cts.add(0, new ChannelTree(Channel.ROOT_ID, Channel.ROOT_NAME,-1));
+		for(ChannelTree node : cts){
+			if(node.getPid() == null){
+				node.setPid(0);
+			}
+		}
+		
+	}
+	
 	@Override
 	public List<Channel> listByParent(Integer pid) {
 		String hql = "select c from Channel c left join fetch c.parentChannel cp "

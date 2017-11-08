@@ -20,6 +20,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/ChannelController.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/UserGroup.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/dao/IBaseDao.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/GroupChannel.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IUserService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/dto/TreeDto.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/Group.java

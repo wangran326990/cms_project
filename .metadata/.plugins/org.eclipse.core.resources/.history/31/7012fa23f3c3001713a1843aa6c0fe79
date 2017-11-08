@@ -1,0 +1,33 @@
+package com.cms.core.model;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class GroupChannel {
+
+	private int id;
+	private Group group;
+	private GroupChannel channel;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Group getGroup() {
+		return group;
+	}
+	public void setGroup(Group group) {
+		this.group = group;
+	}
+	public GroupChannel getChannel() {
+		return channel;
+	}
+	public void setChannel(GroupChannel channel) {
+		this.channel = channel;
+	}
+}

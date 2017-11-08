@@ -1,8 +1,0 @@
-package com.cms.web.controllers;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@RequestMapping("/admin/channels")
-public class ChannelController {
-
-}

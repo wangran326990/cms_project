@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestGroupDao.testFindGroups" project="cms-web-project" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testcase name="testFindGroups" classname="com.cms.core.dao.TestGroupDao" time="2.869"/>
+</testrun>

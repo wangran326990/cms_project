@@ -28,7 +28,11 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 import com.cms.core.test.util.EntitiesHelper;
 import com.cms.basic.model.Pager;
 import com.cms.basic.model.SystemContext;
+import com.cms.core.model.Channel;
+import com.cms.core.model.ChannelTree;
+import com.cms.core.model.ChannelType;
 import com.cms.core.model.Group;
+import com.cms.core.model.GroupChannel;
 import com.cms.core.model.User;
 import com.cms.core.test.util.AbstractDbUnitTestCase;
 
@@ -86,13 +90,68 @@ public class TestGroupDao extends AbstractDbUnitTestCase{
 		
 	}
 	
+	@Test
+	public void testloadGroupChannel(){
+		int gid =1;
+		int cid =1;
+		Group group = new Group(1, "finance department", "responsible for the finance parts of website");
+		Channel channel = new Channel(1, "USER MANAGEMENT MODULE", 0, "#", ChannelType.NAV_CHANNEL, 0, 0, 0, 0, 1, new Channel());
+		GroupChannel expectGC = new GroupChannel(1,group,channel);
+		
+		GroupChannel actualsGC = groupDao.loadGroupChannel(gid, cid);
+		
+		EntitiesHelper.assertGroupChannel(expectGC, actualsGC);
+	}
+	
+	@Test
+	public void testlistGroupChannelIds(){
+		int gid =3;
+		List<Integer> ecids = Arrays.asList(new Integer(7), new Integer(6));
+		List<Integer> acids = groupDao.listGroupChannelIds(gid);
+		for(int i=0; i<ecids.size();i++){
+			assertEquals(ecids.get(i).intValue(), acids.get(i).intValue());
+		}
+	}
+	
+	@Test
+	public void testgenerateGroupChannelTree(){
+		int gid = 3;
+		List<ChannelTree> tree = groupDao.generateGroupChannelTree(gid);
+		System.out.println(tree);
+	}
+	
+	@Test
+	public void testgenerateUserChannelTree(){
+		int uid =2;
+		List<ChannelTree> tree = groupDao.generateUserChannelTree(uid);
+		System.out.println(tree);
+		System.out.println(tree.size());
+	}
+	
+//	@Test
+//	public void testdeleteGroupChannel(){
+//		int gid = 1;
+//		int cid =1;
+//		groupDao.deleteGroupChannel(gid, cid);
+//		GroupChannel gcactuals = groupDao.loadGroupChannel(gid, cid);
+//		assertNull(gcactuals);
+//	}
+//	
+//	@Test 
+//	public void testclearGroupChannels(){
+//		int gid =3;
+//		groupDao.clearGroupChannels(gid);
+//		List<Integer> ids = groupDao.listGroupChannelIds(gid);
+//		assertEquals(ids.size(), 0);
+//	}
 	@After
 	public void tearDown() throws DatabaseUnitException, SQLException, IOException {
-		
+		SystemContext.setOrder("asc");
+		SystemContext.setSort("id");
 		SessionHolder holder = (SessionHolder) TransactionSynchronizationManager.getResource(sessionFactory);
 		Session s = holder.getSession(); 
 		s.flush();
 		TransactionSynchronizationManager.unbindResource(sessionFactory);
-		this.resumeTable();
+		//this.resumeTable();
 	}
 }

@@ -231,7 +231,8 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 	}
 	@After
 	public void tearDown() throws DatabaseUnitException, SQLException, IOException {
-		
+		SystemContext.setOrder("asc");
+		SystemContext.setSort("id");
 		SessionHolder holder = (SessionHolder) TransactionSynchronizationManager.getResource(sessionFactory);
 		Session s = holder.getSession(); 
 		s.flush();

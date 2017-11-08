@@ -1,5 +1,0 @@
-package com.cms.web.filter;
-
-public class SystemContextFilter {
-
-}

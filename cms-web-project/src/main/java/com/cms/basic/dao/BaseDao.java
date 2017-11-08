@@ -82,15 +82,7 @@ public class BaseDao<T> implements IBaseDao<T> {
 
 
 	public List<T> list(String hql, Object[] args, Map<String, Object> alias) {
-		
-		String order = SystemContext.getOrder();
-		String sort = SystemContext.getSort();
-		if(sort!=null && !"".equals(sort.trim())){
-			hql += " order by " + sort;
-			if(!"desc".equals(order)) hql +=" asc";
-			else hql += " desc";
-		}
-		
+		hql = initSort(hql);
 		Query query = getSession().createQuery(hql);
 		if(alias!=null){
 			for(Map.Entry<String, Object> entry : alias.entrySet()){
@@ -141,6 +133,7 @@ public class BaseDao<T> implements IBaseDao<T> {
 	private String initSort(String hql){
 		String order = SystemContext.getOrder();
 		String sort = SystemContext.getSort();
+		if(hql.contains("order by")) return hql;
 		if(sort!=null && !"".equals(sort.trim())){
 			hql += " order by " + sort;
 			if(!"desc".equals(order)) hql +=" asc";

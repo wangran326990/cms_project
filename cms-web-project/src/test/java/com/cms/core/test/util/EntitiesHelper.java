@@ -6,6 +6,7 @@ import junit.framework.Assert;
 
 import com.cms.core.model.Channel;
 import com.cms.core.model.Group;
+import com.cms.core.model.GroupChannel;
 import com.cms.core.model.Role;
 import com.cms.core.model.User;
 
@@ -101,6 +102,12 @@ public class EntitiesHelper {
 		for(int i=0; i<expected.size(); i++){
 			assertChannel(expected.get(i), actuals.get(i));
 		}
+	}
+	
+	public static void assertGroupChannel(GroupChannel expected, GroupChannel actuals){
+		Assert.assertNotNull(expected);
+		assertChannel(expected.getChannel(), actuals.getChannel());
+		assertGroup(expected.getGroup(), actuals.getGroup());
 	}
 	
 }

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestChannelDao" project="cms-web-project" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="com.cms.core.dao.TestChannelDao" time="85.083">
-    <testcase name="testListByParent" classname="com.cms.core.dao.TestChannelDao" time="4.48"/>
-    <testcase name="testGetMaxOrderByParent" classname="com.cms.core.dao.TestChannelDao" time="3.504"/>
-    <testcase name="testgenerateTree" classname="com.cms.core.dao.TestChannelDao" time="72.972"/>
-    <testcase name="testgenerateTreeByParentId" classname="com.cms.core.dao.TestChannelDao" time="4.127"/>
-  </testsuite>
-</testrun>
