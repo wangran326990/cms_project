@@ -69,7 +69,7 @@ public class GroupDao extends BaseDao<Group> implements IGroupDao {
 
 	@Override
 	public List<ChannelTree> generateUserChannelTree(int uid) {
-		String sql = "select c.id as id , c.name as name, c.pid as pid from t_channel c"
+		String sql = "select distinct c.id as id , c.name as name, c.pid as pid from t_channel c"
 					+ " left join t_group_channel gc on gc.c_id = c.id"
 					+ " left join t_user_group ug on ug.g_id = gc.g_id"
 					+ " where ug.u_id = ?";

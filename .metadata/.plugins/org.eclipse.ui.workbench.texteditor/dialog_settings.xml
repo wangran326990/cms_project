@@ -2,27 +2,29 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ajaxCheck" key="selection"/>
+		<item value="fetch" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="ajaxCheck"/>
-			<item value="SystemContextFilter"/>
-			<item value="offset"/>
-			<item value="org.springframework.web.context.request.RequestContextListener"/>
-			<item value="org.springframework.web.context.ContextLoaderListener"/>
-			<item value="beans-core.xml"/>
+			<item value="List&lt;Attachment&gt; attachments = this.getSession().createQuery(hql)."/>
+			<item value="fetch"/>
+			<item value="session"/>
+			<item value="beans"/>
+			<item value="userDao"/>
+			<item value="login"/>
+			<item value="contextConfigLocation"/>
+			<item value="commons-io"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="338" key="DIALOG_WIDTH"/>
+		<item value="358" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="434" key="DIALOG_HEIGHT"/>
-		<item value="758" key="DIALOG_X_ORIGIN"/>
-		<item value="253" key="DIALOG_Y_ORIGIN"/>
+		<item value="482" key="DIALOG_HEIGHT"/>
+		<item value="1139" key="DIALOG_X_ORIGIN"/>
+		<item value="184" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

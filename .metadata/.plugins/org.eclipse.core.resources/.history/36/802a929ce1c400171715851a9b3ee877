@@ -1,0 +1,177 @@
+package com.cms.web.controllers;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.cms.core.errors.CmsException;
+import com.cms.core.model.ChannelTree;
+import com.cms.core.model.Role;
+import com.cms.core.model.RoleType;
+import com.cms.core.model.User;
+import com.cms.dto.UserDto;
+import com.cms.service.IChannelService;
+import com.cms.service.IGroupService;
+import com.cms.service.IRoleService;
+import com.cms.service.IUserService;
+
+
+
+@Controller
+@RequestMapping("/admin/user")
+public class UserController {
+	
+	private IUserService userService;
+	private IGroupService groupService;
+	private IRoleService roleService;
+	private IChannelService channelService;
+	public IUserService getUserService() {
+		return userService;
+	}
+	@Resource(name="userService")
+	public void setUserService(IUserService userService) {
+		this.userService = userService;
+	}
+	
+	public IGroupService getGroupService() {
+		return groupService;
+	}
+	
+	@Resource(name="groupService")
+	public void setGroupService(IGroupService groupService) {
+		this.groupService = groupService;
+	}
+	
+	public IRoleService getRoleService() {
+		return roleService;
+	}
+	
+	@Resource(name="roleService")
+	public void setRoleService(IRoleService roleService) {
+		this.roleService = roleService;
+	}
+	
+	public IChannelService getChannelService() {
+		return channelService;
+	}
+	@Resource(name="channelService")
+	public void setChannelService(IChannelService channelService) {
+		this.channelService = channelService;
+	}
+	
+	@RequestMapping("/users")
+	public String list(Model model){
+		model.addAttribute("datas",userService.findUser());
+		return "user/list";
+	}
+	
+	private void initAddUser(Model model){
+		model.addAttribute("roles", roleService.listRole());
+		model.addAttribute("groups", groupService.listGroup());
+	}
+	
+	@RequestMapping(value="/add", method=RequestMethod.GET)
+	public String add(Model model){
+		model.addAttribute("userDto", new UserDto());
+		this.initAddUser(model);
+		return "user/add";
+	}
+	
+	@RequestMapping(value="/add", method=RequestMethod.POST)
+	public String add(@Valid UserDto userDto, BindingResult br, Model model){
+		if(br.hasErrors()){
+			this.initAddUser(model);
+			return "user/add";
+		}
+		userService.add(userDto.getUser(), userDto.getRoleIds(), userDto.getGroupIds());
+		return "redirect:/admin/user/users";
+	}
+	
+	@RequestMapping(value="/delete/{id}", method = RequestMethod.GET)
+	public String delete(@PathVariable int id){
+		userService.delete(id);
+		return "redirect:/admin/user/users";
+	}
+	
+	@RequestMapping(value="/updateStatus/{id}", method = RequestMethod.GET)
+	public String updateStatus(@PathVariable int id){
+		userService.updateStatus(id);
+		return "redirect:/admin/user/users";
+	}
+	
+	//update 
+	
+	@RequestMapping(value="/update/{id}", method=RequestMethod.GET)
+	public String update(@PathVariable int id, Model model){
+		User user = userService.loadUser(id);
+		List<Integer> roleIds = userService.listUserRoleIds(id);
+		List<Integer> groupIds = userService.listUserGroupIds(id);
+		model.addAttribute("userDto", new UserDto(user,roleIds,groupIds));
+		this.initAddUser(model);
+		return "user/update";
+	}
+	
+	@RequestMapping(value="/update/{id}", method=RequestMethod.POST)
+	public String update(@PathVariable int id, @Valid UserDto userDto, BindingResult br, Model model){
+		if(br.hasErrors()){
+			this.initAddUser(model);
+			return "user/update";
+		}
+		User ou = userService.loadUser(id);
+		ou.setNickname(userDto.getNickname());
+		ou.setPhone(userDto.getPhone());
+		ou.setEmail(userDto.getEmail());
+		ou.setStatus(userDto.getStatus());
+		userService.update(ou, userDto.getRoleIds(), userDto.getGroupIds());
+		return "redirect:/admin/user/users";
+	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
+	public String show(@PathVariable int id, Model model){
+		//userService.loadUser(id);
+		model.addAttribute("user", userService.loadUser(id));
+		model.addAttribute("gs", userService.listUserGroups(id));
+		model.addAttribute("rs", userService.listUserRoles(id));
+		return "user/show";
+	}
+	
+	@RequestMapping(value="/listChannels/{uid}")
+	public String listUserChannels(@PathVariable int uid, Model model){
+		int isAdmin = 0;
+		User user = userService.loadUser(uid);
+		isAdmin = userService.isAdmin(uid);
+		model.addAttribute("user", user);
+		model.addAttribute("uAdmin",isAdmin);
+		return "user/listChannel";
+	}
+	
+	@RequestMapping(value="userTree/{uid}")
+	public @ResponseBody List<ChannelTree> generateUserTree(@PathVariable int uid, @RequestParam Integer isAdmin){
+		if(isAdmin==1){
+			return 
+		}
+		return groupService.generateUserChannelTree(uid);;
+	}
+
+	
+	
+//	@ExceptionHandler(CmsException.class)
+//	private String handleException(CmsException cmsException,HttpServletRequest req){
+//		req.setAttribute("exceptions", cmsException);
+//		return "error";
+//	}
+	
+}

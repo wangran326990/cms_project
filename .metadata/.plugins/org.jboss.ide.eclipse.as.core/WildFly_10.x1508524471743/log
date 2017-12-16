@@ -23,3 +23,22 @@
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 16842785 2017-10-20 14:56:36.271
 !MESSAGE Server Shutdown Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2017-11-21 15:38:52.129
+!MESSAGE Full publish failed for module cms-web-project
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2017-11-21 15:38:52.129
+!MESSAGE Error reading file /home/wr/workspace/CMS/cms-web-project/target/classes/com/cms/core/model/backup.zip
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2017-11-21 15:38:52.129
+!MESSAGE Error reading file /home/wr/workspace/CMS/cms-web-project/target/classes/com/cms/core/model/bkup.zip
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2017-11-21 15:38:52.129
+!MESSAGE Error reading file /home/wr/workspace/CMS/cms-web-project/target/classes/com/cms/core/model/test_v1.zip
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2017-11-21 15:38:53.107
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-11-21 15:39:17.084
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2017-11-21 15:39:37.718
+!MESSAGE Server processes have been terminated.

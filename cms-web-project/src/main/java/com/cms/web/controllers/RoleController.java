@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.cms.auth.AuthClass;
 import com.cms.core.model.Role;
 import com.cms.service.IGroupService;
 import com.cms.service.IRoleService;
@@ -17,6 +18,7 @@ import com.cms.service.IUserService;
 
 @RequestMapping("/admin/role")
 @Controller
+@AuthClass(value="admin")
 public class RoleController {
 	
 	

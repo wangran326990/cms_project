@@ -62,5 +62,11 @@ public interface IUserService {
 	
 	public List<Integer> listUserGroupIds(int userId);
 	
+	public boolean isAdmin(int userId);
 	
+	public User login(String username, String password);
+	
+	public void update(User user);
+	
+	public void updatePwd(int uid, String oldPassword, String newPassword);
 }

@@ -1,4 +1,5 @@
 $(function(){
+	
 	var _cs = new Array();
 	var t = $("#tree").mytree({
 		url:$("#treePath").val(),
@@ -34,18 +35,27 @@ $(function(){
 		}
 	});
 	
-	function handler(msg,exc) {
-		alert(msg);
+	function successHandler(msg) {
+		console.log(msg);
 	}
 	
-	dwr.engine.setErrorHandler(handler);
+	//dwr.engine.setErrorHandler(handler);
 	
 	function addGroupChannel(cs) {
 		var gid = $("#gid").val();
 		for(var i=0;i<cs.length;i++) {
 			var c = cs[i];
 			if(c.id>0) {
-				dwrService.addGroupChannel(gid,c.id);
+				//dwrService.addGroupChannel(gid,c.id);
+				$.ajax({
+					  type: "POST",
+					  url: "addGroupChannel",
+					  data: {
+						  gid:gid,
+						  cid:c.id
+					  },
+					  success: successHandler
+				});
 			}
 		}
 		
@@ -56,7 +66,16 @@ $(function(){
 		for(var i=0;i<cs.length;i++) {
 			var c = cs[i];
 			if(c.id>0) {
-				dwrService.deleteGroupChannel(gid,c.id);
+				//dwrService.deleteGroupChannel(gid,c.id);
+				$.ajax({
+					  type: "POST",
+					  url: "deleteGroupChannel",
+					  data: {
+						  gid:gid,
+						  cid:c.id
+					  },
+					  success: successHandler
+				});
 			}
 		}
 		

@@ -1,0 +1,9 @@
+package com.cms.core.dao;
+
+import com.cms.basic.dao.IBaseDao;
+import com.cms.basic.model.Pager;
+import com.cms.core.model.Topic;
+
+public interface ITopicDao extends IBaseDao<Topic>{
+	public Pager<Topic> findByChannelAndTitle(Integer cid, String title);
+}

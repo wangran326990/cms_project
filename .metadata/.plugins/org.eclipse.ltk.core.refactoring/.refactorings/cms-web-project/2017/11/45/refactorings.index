@@ -1,1 +1,3 @@
 1510079214896	Rename type 'AjexObj'
+1510164551556	Encapsulate field 'channelDao'
+1510185813822	Encapsulate field 'channelService'

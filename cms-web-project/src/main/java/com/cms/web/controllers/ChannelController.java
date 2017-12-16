@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cms.auth.AuthClass;
 import com.cms.basic.util.EnumUtil;
 import com.cms.basic.util.JsonUtil;
 import com.cms.core.model.Channel;
@@ -27,6 +28,7 @@ import com.google.gson.Gson;
 
 @Controller
 @RequestMapping("/admin/channel")
+@AuthClass(value="admin")
 public class ChannelController {
 	
 	private IChannelService channelService;

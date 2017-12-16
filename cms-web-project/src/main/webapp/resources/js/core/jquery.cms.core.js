@@ -98,11 +98,12 @@
 			},
 			mine: {
 				listChild:1,
-				srcElement:"#cc"
+				srcElement:"#cc",
+				expandAll:false
 			},
 			callback:{
 				onAsyncSuccess:function(){
-					if(opts.mine.expandAll)
+					if(setting.mine.expandAll)
 						t.expandAll(true);
 				}
 			}

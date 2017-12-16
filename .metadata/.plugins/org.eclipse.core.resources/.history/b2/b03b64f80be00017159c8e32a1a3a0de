@@ -1,0 +1,44 @@
+package com.cms.core.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.cms.basic.dao.BaseDao;
+import com.cms.basic.model.Pager;
+import com.cms.core.model.Keyword;
+@Repository(value="keywordDao")
+public class KeywordDao extends BaseDao<Keyword> implements IKeywordDao {
+
+
+	@Override
+	public List<Keyword> listPrimaryKeyword(int nums) {
+		
+		String hql = "select k from Keyword k "
+				+ "where k.times >=?"; 
+		
+		return this.list(hql, nums);
+	}
+
+	@Override
+	public Pager<Keyword> findNoUseKeywords() {
+		String hql ="from Keyword where name not in (:ks)";
+		return null;
+	}
+
+	@Override
+	public void clearNoUseKeywords() {
+		String hql ="delete k from Keyword k "
+				+ "where k.times =?";
+		this.updateByHql(hql,0);
+	}
+
+	@Override
+	public List<Keyword> findUsedKeywords() {
+		String hql = "select k from Keyword k "
+				+ "where k.times >=?"; 
+		return this.list(hql, 0);
+	}
+
+	
+}

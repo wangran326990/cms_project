@@ -1,6 +1,8 @@
 package com.cms.web.controllers;
 
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -10,15 +12,20 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cms.auth.AuthClass;
 import com.cms.basic.model.Pager;
 import com.cms.core.dao.GroupDao;
+import com.cms.core.model.ChannelTree;
 import com.cms.core.model.Group;
 import com.cms.service.IGroupService;
 import com.cms.service.IUserService;
 
 @Controller
 @RequestMapping("/admin/group")
+@AuthClass(value="admin")
 public class GroupController {
 	
 	
@@ -100,4 +107,38 @@ public class GroupController {
 		groupService.deleteGroupUsers(id);
 		return "redirect:/admin/group/groups";
 	}
+	
+	@RequestMapping(value="/listChannels/{gid}", method=RequestMethod.GET)
+	public String listChannels(@PathVariable int gid, Model model){
+		Group group = groupService.load(gid);
+		model.addAttribute("group", group);
+		return "group/listChannel";
+	}
+	
+	@RequestMapping(value="/groupTree/{gid}", method=RequestMethod.POST)
+	public @ResponseBody List<ChannelTree> AsyncGetTree(@PathVariable int gid){
+		return groupService.generateGroupChannelTree(gid);
+	}	
+	
+	@RequestMapping(value="/setChannels/{gid}", method=RequestMethod.GET)
+	public String setChannel(@PathVariable int gid, Model model){
+		List<Integer> cids =groupService.listGroupChannelIds(gid);
+		Group group = groupService.load(gid);
+		model.addAttribute("cids", cids);
+		model.addAttribute("group", group);
+		return "group/setChannel";
+		
+	}
+	@RequestMapping(value="/setChannels/addGroupChannel", method=RequestMethod.POST)
+	public @ResponseBody String addGroupChannel(@RequestParam int gid,@RequestParam int cid){
+		groupService.addGroupChannel(gid, cid);
+		return "success";
+	}
+	
+	@RequestMapping(value="/setChannels/deleteGroupChannel", method=RequestMethod.POST)
+	public @ResponseBody String deleteGroupChannel(@RequestParam int gid,@RequestParam int cid){
+		groupService.deleteGroupChannel(gid, cid);
+		return "success";
+	}
+	
 }

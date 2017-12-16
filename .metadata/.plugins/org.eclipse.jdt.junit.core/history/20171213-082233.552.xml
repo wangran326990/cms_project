@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestGroupDao" project="cms-web-project" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cms.core.dao.TestGroupDao" time="50.23">
+    <testcase name="testFindGroups" classname="com.cms.core.dao.TestGroupDao" time="7.601"/>
+    <testcase name="testDeleteUsersFromGroup" classname="com.cms.core.dao.TestGroupDao" time="6.595"/>
+    <testcase name="testloadGroupChannel" classname="com.cms.core.dao.TestGroupDao" time="6.631"/>
+    <testcase name="testlistGroupChannelIds" classname="com.cms.core.dao.TestGroupDao" time="6.743"/>
+    <testcase name="testgenerateGroupChannelTree" classname="com.cms.core.dao.TestGroupDao" time="7.952"/>
+    <testcase name="testgenerateUserChannelTree" classname="com.cms.core.dao.TestGroupDao" time="7.409"/>
+    <testcase name="testListGroups" classname="com.cms.core.dao.TestGroupDao" time="7.299"/>
+  </testsuite>
+</testrun>

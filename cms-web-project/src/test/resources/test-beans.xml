@@ -18,6 +18,9 @@
 		<constructor-arg value="com.cms.core.dao.IUserDao"/>
 	</bean>
 	
+	<bean id="channelDao" class="org.easymock.EasyMock" factory-method="createStrictMock">
+		<constructor-arg value="com.cms.core.dao.IChannelDao"/>
+	</bean>
 	<bean id="roleDao" class="org.easymock.EasyMock" factory-method="createStrictMock">
 		<constructor-arg value="com.cms.core.dao.IRoleDao"/>
 	</bean>
@@ -35,6 +38,7 @@
 	<bean id="groupService" class="com.cms.service.GroupService">
 		<property name="userDao" ref="userDao"></property>
 		<property name="groupDao" ref="groupDao"></property>
+		<property name="channelDao" ref="channelDao"></property>
 	</bean>
 	
 	<bean id="roleService" class="com.cms.service.RoleService">

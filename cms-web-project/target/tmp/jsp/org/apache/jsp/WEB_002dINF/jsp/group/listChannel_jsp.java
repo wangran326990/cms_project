@@ -1,0 +1,107 @@
+package org.apache.jsp.WEB_002dINF.jsp.group;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+
+public final class listChannel_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html; charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
+      out.write("<html>\r\n");
+      out.write("<head>\r\n");
+      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"");
+      out.print(request.getContextPath() );
+      out.write("/resources/css/admin/main.css\"/>\r\n");
+      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"");
+      out.print(request.getContextPath() );
+      out.write("/resources/css/zTree/zTreeStyle.css\"/>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(request.getContextPath() );
+      out.write("/resources/js/jquery-1.7.2.min.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(request.getContextPath() );
+      out.write("/resources/js/tree/jquery.ztree.core-3.5.min.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(request.getContextPath() );
+      out.write("/resources/js/core/jquery.cms.core.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\">\r\n");
+      out.write("$(function(){\r\n");
+      out.write("\tvar t = $(\"#tree\").mytree({\r\n");
+      out.write("\t\t\turl:$(\"#treePath\").val(),\r\n");
+      out.write("\t\t\tmine:{listChild:0,expandAll:true}\r\n");
+      out.write("\t});\r\n");
+      out.write("});\r\n");
+      out.write("</script>\r\n");
+      out.write("</head>\r\n");
+      out.write("<body>\r\n");
+      out.write("<div id=\"content\">\r\n");
+      out.write("\t<h3 class=\"admin_link_bar\">\r\n");
+      out.write("\t\t");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "inc.jsp", out, false);
+      out.write("\r\n");
+      out.write("\t</h3>\r\n");
+      out.write("\t<div>\r\n");
+      out.write("\t\t<input type=\"hidden\" id=\"treePath\" value=\"");
+      out.print(request.getContextPath());
+      out.write("/admin/group/groupTree/");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${group.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"/>\r\n");
+      out.write("\t\t<div style=\"padding-left:10px;font-size:12px;\">当前组名称:");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${group.name }", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</div>\r\n");
+      out.write("\t\t<div id=\"tree\" class=\"ztree\"></div>\r\n");
+      out.write("\t</div>\r\n");
+      out.write("</div>\r\n");
+      out.write("</body>\r\n");
+      out.write("</html>");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}

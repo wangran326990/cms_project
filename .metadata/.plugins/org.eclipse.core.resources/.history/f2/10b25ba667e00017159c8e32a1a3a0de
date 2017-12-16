@@ -1,0 +1,5 @@
+package com.cms.service;
+
+public interface ITopicService {
+	public void add(Topic topic, int cid, int uid, Integer[] aids);
+}

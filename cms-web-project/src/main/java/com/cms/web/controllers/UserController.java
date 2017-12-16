@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -14,10 +15,18 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cms.auth.AuthClass;
+import com.cms.auth.AuthMethod;
 import com.cms.core.errors.CmsException;
+import com.cms.core.model.ChannelTree;
+import com.cms.core.model.Role;
+import com.cms.core.model.RoleType;
 import com.cms.core.model.User;
 import com.cms.dto.UserDto;
+import com.cms.service.IChannelService;
 import com.cms.service.IGroupService;
 import com.cms.service.IRoleService;
 import com.cms.service.IUserService;
@@ -26,11 +35,13 @@ import com.cms.service.IUserService;
 
 @Controller
 @RequestMapping("/admin/user")
+@AuthClass(value="login")
 public class UserController {
 	
 	private IUserService userService;
 	private IGroupService groupService;
 	private IRoleService roleService;
+	private IChannelService channelService;
 	public IUserService getUserService() {
 		return userService;
 	}
@@ -57,7 +68,14 @@ public class UserController {
 		this.roleService = roleService;
 	}
 	
-
+	public IChannelService getChannelService() {
+		return channelService;
+	}
+	@Resource(name="channelService")
+	public void setChannelService(IChannelService channelService) {
+		this.channelService = channelService;
+	}
+	
 	@RequestMapping("/users")
 	public String list(Model model){
 		model.addAttribute("datas",userService.findUser());
@@ -134,8 +152,81 @@ public class UserController {
 		return "user/show";
 	}
 	
+	@RequestMapping(value="/listChannels/{uid}")
+	public String listUserChannels(@PathVariable int uid, Model model){
+		boolean isAdmin = false;
+		User user = userService.loadUser(uid);
+		isAdmin = userService.isAdmin(uid);
+		model.addAttribute("user", user);
+		model.addAttribute("uAdmin",isAdmin);
+		return "user/listChannel";
+	}
 	
+	@RequestMapping(value="userTree/{uid}")
+	public @ResponseBody List<ChannelTree> generateUserTree(@PathVariable int uid, @RequestParam boolean isAdmin){
+		if(isAdmin){
+			return channelService.generateTree();
+		}
+		return groupService.generateUserChannelTree(uid);
+	}
+
+	@RequestMapping(value="/showSelf")
+	@AuthMethod(role="base")
+	public String showSelf(HttpSession session, Model model){
+		User user = (User)session.getAttribute("loginUser");
+		if(user==null){
+			throw new CmsException("user not exist!!");
+		}
+		int id = user.getId();
+		model.addAttribute("user", userService.loadUser(id));
+		model.addAttribute("gs", userService.listUserGroups(id));
+		model.addAttribute("rs", userService.listUserRoles(id));
+		return "user/show";
+	}
+	@RequestMapping(value="/updateSelf", method = RequestMethod.GET)
+	@AuthMethod(role="base")
+	public String updateSelf(HttpSession session, Model model){
+		User user = (User)session.getAttribute("loginUser");
+		if(user==null){
+			throw new CmsException("user not exist!!");
+		}
+		//int id = user.getId();
+		model.addAttribute("userDto", new UserDto(user));
+		return"user/updateSelf";
+	}
+	@RequestMapping(value="/updateSelf", method = RequestMethod.POST)
+	@AuthMethod(role="base")
+	public String updateSelf(@Valid UserDto userDto, BindingResult br, Model model, HttpSession session){
+		if(br.hasErrors()){
+			return "user/updateSelf";
+		}
+		User user = (User)session.getAttribute("loginUser");
+		
+		//int id = user.getId();
+		user.setNickname(userDto.getNickname());
+		user.setPhone(userDto.getPhone());
+		user.setEmail(userDto.getEmail());
+		userService.update(user);
+		return "redirect:/admin/user/showSelf";
+		
+	}
 	
+	@RequestMapping(value="/updatePwd", method = RequestMethod.GET)
+	@AuthMethod(role="base")
+	public String updatePwd(HttpSession session, Model model){
+		User user = (User)session.getAttribute("loginUser");
+		//int id = user.getId();
+		model.addAttribute("user",user);
+		return"user/updatePwd";
+	}
+	
+	@RequestMapping(value="/updatePwd", method = RequestMethod.POST)
+	@AuthMethod(role="base")
+	public String updatePwd(int id, String oldPwd, String password){
+
+		userService.updatePwd(id, oldPwd, password);
+		return"user/updatePwd";
+	}
 //	@ExceptionHandler(CmsException.class)
 //	private String handleException(CmsException cmsException,HttpServletRequest req){
 //		req.setAttribute("exceptions", cmsException);

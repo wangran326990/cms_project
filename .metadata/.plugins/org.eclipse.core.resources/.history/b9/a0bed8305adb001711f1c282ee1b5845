@@ -1,0 +1,43 @@
+package com.cms.core.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestAttachment {
+
+	@Test
+	public void testFindNoUsedAttachment() {
+	}
+
+	@Test
+	public void testClearNoUsedAttachment() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDeleteByTopic() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testListByTopic() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testListIndexPic() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFindChannelPic() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testListAttachmentByTopic() {
+		fail("Not yet implemented");
+	}
+
+}

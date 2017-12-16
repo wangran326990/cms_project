@@ -1,0 +1,132 @@
+package com.cms.service;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.cms.basic.model.Pager;
+import com.cms.core.dao.IAttachmentDao;
+import com.cms.core.dao.IChannelDao;
+import com.cms.core.dao.ITopicDao;
+import com.cms.core.dao.IUserDao;
+import com.cms.core.model.Topic;
+
+@Service(value="topicService")
+public class TopicService implements ITopicService {
+
+	private ITopicDao topicDao;
+	private IAttachmentDao attachmentDao;
+	private IUserDao userDao;
+	private IChannelDao channelDao;
+	
+	public ITopicDao getTopicDao() {
+		return topicDao;
+	}
+	
+	@Resource(name="topicDao")
+	public void setTopicDao(ITopicDao topicDao) {
+		this.topicDao = topicDao;
+	}
+
+	public IAttachmentDao getAttachmentDao() {
+		return attachmentDao;
+	}
+	
+	@Resource(name="attachmentDao")
+	public void setAttachmentDao(IAttachmentDao attachmentDao) {
+		this.attachmentDao = attachmentDao;
+	}
+
+	
+	public IUserDao getUserDao() {
+		return userDao;
+	}
+	
+	@Resource(name="userDao")
+	public void setUserDao(IUserDao userDao) {
+		this.userDao = userDao;
+	}
+
+	public IChannelDao getChannelDao() {
+		return channelDao;
+	}
+	
+	@Resource(name="channelDao")
+	public void setChannelDao(IChannelDao channelDao) {
+		this.channelDao = channelDao;
+	}
+	
+	@Override
+	public void add(Topic topic, int cid, int uid, Integer[] aids) {
+		
+	}
+
+	@Override
+	public void add(Topic topic, int cid, int uid) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delelte(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(Topic topic, int cid, Integer[] aids) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(Topic topic, int cid) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Topic load(int tid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Pager<Topic> findByChannelAndTitle(Integer cid, String title) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Pager<Topic> searchTopicByKeyword(String keyword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Pager<Topic> searchTopic(String con) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Pager<Topic> find(Integer cid, String title, Integer status) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Pager<Topic> find(Integer uid, Integer cid, String title, Integer status) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Pager<Topic> findRecommandTopic(Integer cid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+}

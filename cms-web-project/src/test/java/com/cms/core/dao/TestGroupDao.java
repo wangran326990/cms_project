@@ -95,7 +95,7 @@ public class TestGroupDao extends AbstractDbUnitTestCase{
 		int gid =1;
 		int cid =1;
 		Group group = new Group(1, "finance department", "responsible for the finance parts of website");
-		Channel channel = new Channel(1, "USER MANAGEMENT MODULE", 0, "#", ChannelType.NAV_CHANNEL, 0, 0, 0, 0, 1, new Channel());
+		Channel channel = new Channel(1, "user management module", 0, "#", ChannelType.NAV_CHANNEL, 0, 0, 0, 0, 1, new Channel());
 		GroupChannel expectGC = new GroupChannel(1,group,channel);
 		
 		GroupChannel actualsGC = groupDao.loadGroupChannel(gid, cid);
@@ -152,6 +152,6 @@ public class TestGroupDao extends AbstractDbUnitTestCase{
 		Session s = holder.getSession(); 
 		s.flush();
 		TransactionSynchronizationManager.unbindResource(sessionFactory);
-		//this.resumeTable();
+		this.resumeTable();
 	}
 }

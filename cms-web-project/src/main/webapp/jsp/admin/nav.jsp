@@ -17,7 +17,7 @@ $(function(){
 </head>
 <body>
 <div id="left">
-<c:if test="${isAdmin || true}">
+<c:if test="${isAdmin}">
 <ul class="navMenu navSelected">
 	<h3 class="navTitle">
 		<span class="navTilteTxt">用户管理</span>
@@ -37,7 +37,7 @@ $(function(){
 	<h3 class="navTitle">
 		<span class="navTilteTxt">文章管理</span>
 	</h3>
-	<c:if test="${isAdmin || true}">
+	<c:if test="${isAdmin}">
 	<li class="navChild">
 		<a href="<%=request.getContextPath() %>/admin/channel/channels" target="content">栏目信息管理</a>
 	</li>
@@ -46,7 +46,7 @@ $(function(){
 		<a href="<%=request.getContextPath() %>/admin/topic/audits" target="content">文章信息管理</a>
 	</li>
 </ul>
-<c:if test="${isAdmin || true}">
+<c:if test="${isAdmin}">
 	<ul class="navMenu navSelected">
 		<h3 class="navTitle">
 			<span class="navTilteTxt">系统配置</span>

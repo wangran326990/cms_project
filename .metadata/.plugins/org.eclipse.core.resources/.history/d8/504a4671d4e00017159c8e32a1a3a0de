@@ -1,0 +1,14 @@
+package com.cms.service;
+
+import com.cms.core.model.Topic;
+
+public interface ITopicService {
+	/**
+	 * add topic 
+	 * @param topic object
+	 * @param cid	channel id
+	 * @param uid	user id
+	 * @param aids	attachment ids
+	 */
+	public void add(Topic topic, int cid, int uid, Integer[] aids);
+}
