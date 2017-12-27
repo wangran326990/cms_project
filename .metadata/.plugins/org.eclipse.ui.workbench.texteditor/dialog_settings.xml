@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="fetch" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="delete"/>
+			<item value="getSession"/>
+			<item value="sv"/>
+			<item value="ROLE_PUBLISH"/>
+			<item value="unauditList"/>
+			<item value="allAuths"/>
+			<item value="allActions"/>
 			<item value="List&lt;Attachment&gt; attachments = this.getSession().createQuery(hql)."/>
-			<item value="fetch"/>
-			<item value="session"/>
-			<item value="beans"/>
-			<item value="userDao"/>
-			<item value="login"/>
-			<item value="contextConfigLocation"/>
-			<item value="commons-io"/>
 		</list>
 		<list key="replacehistory">
+			<item value="ROLE_PUBLISHER"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

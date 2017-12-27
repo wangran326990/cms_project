@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=cms-web-project/src\/main\/java&lt;com.cms.basic.dao{IBaseDao.java[IBaseDao" modifiers="513" timestamp="1508521458000"/>
-<typeInfo handle="=cms-web-project/src\/main\/java&lt;com.cms.core.dao{AttachmentDao.java[AttachmentDao" modifiers="1" timestamp="1512664710000"/>
+<typeInfo handle="=cms-web-project/src\/main\/java&lt;com.cms.core.dao{AttachmentDao.java[AttachmentDao" modifiers="1" timestamp="1513090154000"/>
+<typeInfo handle="=cms-web-project/src\/main\/java&lt;com.cms.service{ITopicService.java[ITopicService" modifiers="513" timestamp="1513380350000"/>
 </typeInfoHistroy>
