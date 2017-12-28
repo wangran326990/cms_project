@@ -100,5 +100,8 @@ public interface IBaseDao<T> {
 	public <N extends Object> Pager<N> findBySql(String sql, Object[] args, Map<String, Object> alias, Class<? extends Object> clz, boolean hasEntity);
 	public <N extends Object> Pager<N> findAliasBySql(String sql, Map<String, Object> alias, Class<? extends Object> clz, boolean hasEntity);
 	*/
+	
+	//public T queryObject(String hql, Object[] args, Map<String, Object> alias);
+	
 }
 

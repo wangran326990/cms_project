@@ -34,4 +34,6 @@ public interface ITopicService {
 	public Pager<Topic> find(Integer uid, Integer cid, String title, Integer status);
 	
 	public Pager<Topic> findRecommandTopic(Integer cid);
+	
+	public void updateStatus(int tid);
 }

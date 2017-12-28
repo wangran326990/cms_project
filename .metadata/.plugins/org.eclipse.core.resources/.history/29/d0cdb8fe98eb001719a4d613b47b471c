@@ -1,0 +1,64 @@
+package com.cms.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.cms.basic.model.Pager;
+import com.cms.core.model.Keyword;
+
+@Service(value="keywordService")
+public class KeywordService implements IKeywordService {
+
+	private IKeywordService keywordService;
+	
+	@Override
+	public void saveOrUpdate(String name) {
+		// TODO Auto-generated method stub
+
+	}
+
+
+	@Override
+	public Pager<Keyword> findNoUseKeywords() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Keyword> listNoUseKeywords() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void clearNoUseKeywords() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Keyword> findUsedKeywords() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addOrUpdate(String name) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Keyword> getKeywordByTimes(int nums) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Keyword> getMaxTimesKeyword(int nums) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

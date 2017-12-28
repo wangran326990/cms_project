@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.validation.constraints.NotNull;
 
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.dataset.IDataSet;
@@ -41,6 +42,7 @@ public class TestKeywordDao extends AbstractDbUnitTestCase{
 		Session s = sessionFactory.openSession();
 		TransactionSynchronizationManager.bindResource(sessionFactory, new SessionHolder(s));
 		IDataSet ds = createDateSet("topic");
+		DatabaseOperation.TRUNCATE_TABLE.execute(dbunitCon, ds);
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 	
 	}
@@ -65,8 +67,24 @@ public class TestKeywordDao extends AbstractDbUnitTestCase{
 	public void testFindUsedKeywords() {
 		List<Keyword> keywords = keywordDao.findUsedKeywords();
 		//assertEquals(keywords.getTotal(),10);
+		System.out.println(keywords);
 	}
 	
+	@Test
+	public void testAddOrUpdate_Update(){
+		String name = "ab";
+		keywordDao.addOrUpdate(name);
+		Keyword kw = keywordDao.load(1);
+		assertEquals(2, kw.getTimes());
+	}
+	
+	@Test
+	public void testAddOrUpdate_Add(){
+		String name = "fjiwoejfiow";
+		keywordDao.addOrUpdate(name);
+		Keyword kw = keywordDao.load(11);
+		assertNotNull(kw);
+	}
 	@After
 	public void tearDown() throws Exception {
 		SystemContext.setOrder("asc");

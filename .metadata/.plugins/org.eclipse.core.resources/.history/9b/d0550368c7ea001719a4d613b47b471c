@@ -1,0 +1,10 @@
+package com.cms.service;
+
+import com.cms.core.model.Attachment;
+
+public interface IAttachmentService {
+	
+	public void add(Attachment attachment);
+	
+	public void delete
+}

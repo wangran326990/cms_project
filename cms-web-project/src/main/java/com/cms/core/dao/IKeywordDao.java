@@ -20,7 +20,12 @@ public interface IKeywordDao extends IBaseDao<Keyword>{
 	
 	public Pager<Keyword> findNoUseKeywords();
 	
+	public List<Keyword> listNoUseKeywords();
+	
 	public void clearNoUseKeywords();
 	
 	public List<Keyword> findUsedKeywords();
+	
+	
+	public void addOrUpdate(String name);
 }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.cms.basic.dao.BaseDao;
 import com.cms.basic.model.Pager;
+import com.cms.core.model.Attachment;
 import com.cms.core.model.Keyword;
 @Repository(value="keywordDao")
 public class KeywordDao extends BaseDao<Keyword> implements IKeywordDao {
@@ -61,9 +62,13 @@ public class KeywordDao extends BaseDao<Keyword> implements IKeywordDao {
 
 	@Override
 	public void clearNoUseKeywords() {
-		String hql ="delete k from Keyword k "
-				+ "where k.times =?";
-		this.updateByHql(hql,0);
+//		String hql ="delete k from Keyword k "
+//				+ "where k.times =?";
+//		this.updateByHql(hql,0);
+		List<Keyword> keywords = this.listNoUseKeywords();
+		for(Keyword keyword : keywords){
+			this.delete(keyword.getId());
+		}
 	}
 
 	@Override
@@ -76,6 +81,33 @@ public class KeywordDao extends BaseDao<Keyword> implements IKeywordDao {
 		}
 		Collections.sort(ks);
 		return ks;
+	}
+
+	@Override
+	public void addOrUpdate(String name) {
+		String hql = "from Keyword where name=?";
+		Keyword kw = (Keyword)this.queryObject(hql, name);
+		if(kw == null) {
+			Keyword keyword = new Keyword();
+			keyword.setName(name);
+			keyword.setNameFullPy(name);
+			keyword.setNameShortPy(name);
+			keyword.setTimes(1);
+			this.add(keyword);
+		}else{
+			kw.setTimes(kw.getTimes()+1);
+		}
+	}
+
+	@Override
+	public List<Keyword> listNoUseKeywords() {
+		String hql ="from Keyword where name not in (:ks)";
+		//get a set of used keyword names
+		Set<String> ks = getExistKeywords();
+		Map<String, Object> alias = new HashMap<>();
+		alias.put("ks", ks);
+			
+		return this.listByAlias(hql, alias);
 	}
 
 	
