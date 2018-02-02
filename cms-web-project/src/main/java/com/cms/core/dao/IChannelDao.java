@@ -26,4 +26,8 @@ public interface IChannelDao extends IBaseDao<Channel> {
 	public List<ChannelTree> generateTreeByParent(Integer pid);
 	
 	public void updateSort(Integer[] ids);
+	
+	public List<Channel> listChannelsByStatus(int status);
+	
+	public List<ChannelTree> generatePublishedChannelTree();
 }

@@ -17,12 +17,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.cms.auth.AuthMethod;
 import com.cms.basic.util.Captcha;
+import com.cms.basic.util.CmsSessionContext;
 import com.cms.core.model.Role;
 import com.cms.core.model.RoleType;
 import com.cms.core.model.User;
+import com.cms.dto.AjaxObj;
 import com.cms.service.IUserService;
+import com.google.gson.Gson;
 
 @Controller("loginController")
 public class LoginController {
@@ -57,11 +62,11 @@ public class LoginController {
 		session.setAttribute("isAdmin", isAdmin);
 		if(!isAdmin) {
 			session.setAttribute("allActions", getAllActions(rs, session));
-			session.setAttribute("isAudit", isRole(rs,RoleType.ROLE_AUDIT));
-			session.setAttribute("isPublish", isRole(rs,RoleType.ROLE_PUBLISHER));
+			session.setAttribute("isAudit",  isRole(rs,RoleType.ROLE_AUDIT));
+			session.setAttribute("isPublish",isRole(rs,RoleType.ROLE_PUBLISHER));
 		}
 		session.removeAttribute("cc");
-		//CmsSessionContext.addSessoin(session);
+		CmsSessionContext.addSessoin(session);
 		return "redirect:/admin";
 	}
 	
@@ -103,5 +108,16 @@ public class LoginController {
 		session.setAttribute("cc", checkcode);
 		OutputStream os = resp.getOutputStream();
 		ImageIO.write(c.generateCheckImg(checkcode), "jpg", os);
+	}
+	
+	@RequestMapping(value="/upload",method=RequestMethod.POST)//返回的是json类型的值，而uploadify只能接受字符串
+	
+	public void upload(MultipartFile attach,HttpServletResponse resp) throws IOException {
+		System.out.println(attach.getOriginalFilename());
+		Gson gson = new Gson();
+		resp.setContentType("text/plain");
+		AjaxObj ao =  new AjaxObj();
+		String resultJson = gson.toJson(ao);
+		resp.getWriter().write(resultJson);
 	}
 }

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestKeywordDao" project="cms-web-project" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="com.cms.core.dao.TestKeywordDao" time="41.875">
-    <testcase name="testListPrimaryKeyword" classname="com.cms.core.dao.TestKeywordDao" time="8.664"/>
-    <testcase name="testFindNoUseKeywords" classname="com.cms.core.dao.TestKeywordDao" time="8.41"/>
-    <testcase name="testClearNoUseKeywords" classname="com.cms.core.dao.TestKeywordDao" time="7.675"/>
-    <testcase name="testFindUsedKeywords" classname="com.cms.core.dao.TestKeywordDao" time="8.389"/>
-    <testcase name="testAddOrUpdate" classname="com.cms.core.dao.TestKeywordDao" time="8.737"/>
-  </testsuite>
-</testrun>

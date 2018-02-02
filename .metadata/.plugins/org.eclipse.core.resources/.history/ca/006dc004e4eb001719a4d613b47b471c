@@ -1,0 +1,90 @@
+package com.cms.dto;
+
+import java.util.Date;
+
+
+public class TopicDto {
+	private int id;
+
+	private String title;
+	private int channelPicId;
+	private String keyword;
+	private int status;
+	private int recommend;
+	private String content;
+	private String summary;
+	private String publishName;
+	private Date publishDate;
+	private int cid;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public int getChannelPicId() {
+		return channelPicId;
+	}
+	public void setChannelPicId(int channelPicId) {
+		this.channelPicId = channelPicId;
+	}
+	public String getKeyword() {
+		return keyword;
+	}
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	public int getRecommend() {
+		return recommend;
+	}
+	public void setRecommend(int recommend) {
+		this.recommend = recommend;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getSummary() {
+		return summary;
+	}
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+	public String getPublishName() {
+		return publishName;
+	}
+	public void setPublishName(String publishName) {
+		this.publishName = publishName;
+	}
+	public Date getPublishDate() {
+		return publishDate;
+	}
+	public void setPublishDate(Date publishDate) {
+		this.publishDate = publishDate;
+	}
+	public int getCid() {
+		return cid;
+	}
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+	
+	public TopicDto(){
+		
+	}
+
+}

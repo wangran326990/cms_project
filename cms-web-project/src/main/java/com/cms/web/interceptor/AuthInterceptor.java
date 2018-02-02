@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import com.cms.basic.util.CmsSessionContext;
 import com.cms.core.errors.CmsException;
 import com.cms.core.model.User;
 
@@ -19,6 +20,10 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			throws Exception {
 		HttpSession session = request.getSession(); 
 		HandlerMethod hm = (HandlerMethod)handler;
+		String sid = request.getParameter("sid");
+		if(sid!=null && !"".equals(sid)){
+			session = CmsSessionContext.getSession(sid);
+		}
 		User loginUser = (User)session.getAttribute("loginUser");
 		if(loginUser == null){
 			response.sendRedirect(request.getContextPath()+"/login");
@@ -27,6 +32,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			if(!isAdmin){
 				Set<String> actions = (Set<String>)session.getAttribute("allActions");
 				String aname = hm.getBean().getClass().getName()+"."+hm.getMethod().getName();
+				System.out.println(aname);
 				if(!actions.contains(aname)) throw new CmsException("没有权限访问该功能");
 			}
 		}

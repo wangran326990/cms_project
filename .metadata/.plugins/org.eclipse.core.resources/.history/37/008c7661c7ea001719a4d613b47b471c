@@ -1,6 +1,0 @@
-package com.cms.service;
-
-public interface IAttachmentService {
-	public void add(Attachment attachment);
-	
-}

@@ -206,7 +206,7 @@ public class UserService implements IUserService {
 	public User login(String username, String password) {
 		User user = userDao.loadByUsername(username);
 		String encryptionPassword = SecurityUtil.encryptionPassword(password);
-		System.out.println(encryptionPassword);
+		//System.out.println(encryptionPassword);
 		if(user==null || !user.getPassword().equals(encryptionPassword)){
 			throw new CmsException("username or password not correct");
 		}

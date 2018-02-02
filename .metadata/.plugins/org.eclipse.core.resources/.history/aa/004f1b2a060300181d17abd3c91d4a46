@@ -1,0 +1,116 @@
+package com.cms.service;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.imageio.ImageIO;
+import javax.xml.bind.attachment.AttachmentMarshaller;
+
+import org.springframework.stereotype.Service;
+
+import com.cms.basic.model.Pager;
+import com.cms.basic.model.SystemContext;
+import com.cms.core.dao.IAttachmentDao;
+import com.cms.core.model.Attachment;
+
+import net.coobird.thumbnailator.Thumbnails;
+import net.coobird.thumbnailator.Thumbnails.Builder;
+
+@Service("attachmentService")
+public class AttachmentService implements IAttachmentService {
+	
+	private IAttachmentDao attachmentDao;
+	public final static String UPLOAD_PATH="/upload/";
+	public final static int IMAGE_WIDTH =900;
+	
+	
+	public IAttachmentDao getAttachmentDao() {
+		return attachmentDao;
+	}
+	
+	@Resource(name="attachmentDao")
+	public void setAttachmentDao(IAttachmentDao attachmentDao) {
+		this.attachmentDao = attachmentDao;
+	}
+	
+	public static void deleteAttachFiles(Attachment a){
+		
+		String realPath = SystemContext.getRealPath();
+		realPath +=UPLOAD_PATH;
+		new File(realPath + a.getNewName()).delete();
+		
+	}
+	
+	@Override
+	public void add(Attachment attachment, InputStream is) throws IOException{
+		attachmentDao.add(attachment);
+		String realPath = 
+	}
+
+	@Override
+	public void delete(int id) {
+		Attachment a = attachmentDao.load(id);
+		if(a==null) return;
+		attachmentDao.delete(id);
+		deleteAttachFiles(a);
+		
+	}
+
+	@Override
+	public Attachment load(int id) {
+		return attachmentDao.load(id);
+	}
+
+	@Override
+	public Pager<Attachment> findNoUsedAttachment() {
+		return attachmentDao.findNoUsedAttachment();
+	}
+
+	@Override
+	public void clearNoUsedAttachment() {
+		attachmentDao.clearNoUsedAttachment();
+	}
+
+	@Override
+	public List<Attachment> listByTopic(int tid) {
+		return attachmentDao.listByTopic(tid);
+	}
+
+	@Override
+	public List<Attachment> listIndexPic(int nums) {
+		return attachmentDao.listIndexPic(nums);
+	}
+
+	@Override
+	public Pager<Attachment> findChannelPic(int cid) {
+		
+		return attachmentDao.findChannelPic(cid);
+	}
+
+	@Override
+	public List<Attachment> listAttachedByTopic(int tid) {
+		return attachmentDao.listAttachedByTopic(tid);
+	}
+	
+	
+	private void saveFile(Attachment a,InputStream is) throws IOException{
+		String realPath = SystemContext.getRealPath();
+		System.out.println(realPath);
+		if(a.getIsImg()==1){
+			BufferedImage oldBi = ImageIO.read(is); 
+			int width = oldBi.getWidth();
+			BufferedImage bi =null;
+			Builder<BufferedImage> bf = Thumbnails.of(oldBi);
+			if(width>IMAGE_WIDTH){
+				bf.scale((double)IMAGE_WIDTH/(double)width);
+			}
+			String path = realPath+"/"+a.getNewName();
+			bf.toFile(path);
+		}
+	}
+
+}

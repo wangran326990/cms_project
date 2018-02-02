@@ -65,8 +65,8 @@ $(function(){
 		<tr>
 			<td class="rightTd">状态:</td>
 			<td>
-				<sf:radiobutton path="status" value="0"/>启用
-				<sf:radiobutton path="status" value="1"/>停用
+				<sf:radiobutton path="status" value="1"/>启用
+				<sf:radiobutton path="status" value="0"/>停用
 			</td>
 		</tr>
 		

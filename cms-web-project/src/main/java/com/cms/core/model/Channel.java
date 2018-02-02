@@ -34,7 +34,10 @@ public class Channel {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	public Channel(int id, String name){
+		this.id = id;
+		this.name = name;
+	}
 	
 	public Channel(int id, String name, int customLink, String customLinkUrl, ChannelType type, int isIndex,
 			int isTopNav, int isRecmd, int status, int orders, Channel parentChannel) {

@@ -45,7 +45,7 @@ public class AjaxObj {
 	}
 	
 	public AjaxObj() {
-		// TODO Auto-generated constructor stub
+		this.result =1;
 	}
 
 	public AjaxObj(int result, String msg, Object obj) {

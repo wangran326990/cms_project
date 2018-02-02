@@ -2,7 +2,7 @@ package com.cms.core.model;
 
 
 
-public class ChannelTree {
+public class ChannelTree implements Comparable<ChannelTree>{
 	private Integer id;
 	private String name;
 	private Integer pid;
@@ -45,5 +45,10 @@ public class ChannelTree {
 	public String toString() {
 		return "ChannelTree [id=" + id + ", name=" + name + ", pid=" + pid
 				+ "]";
+	}
+
+	@Override
+	public int compareTo(ChannelTree o) {
+		return this.getPid().compareTo(o.getPid());
 	}
 }

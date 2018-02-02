@@ -11,6 +11,7 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cms.auth.AuthClass;
 import com.cms.auth.AuthMethod;
+import com.cms.basic.util.CmsSessionContext;
+import com.cms.core.errors.CmsException;
 import com.cms.core.model.User;
 
 @Controller
@@ -65,4 +68,14 @@ public class AdminController {
 //		ImageIO.write(img, "jpg", os);
 //		
 //	}
+	@RequestMapping("/admin/logout")
+	@AuthMethod(role="base")
+	public String logout(HttpSession session){
+			CmsSessionContext.removeSession(session);
+			session.invalidate();
+			return "redirect:/login";
+	}
+	
+	
+	
 }

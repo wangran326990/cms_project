@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=cms-web-project/src\/main\/java&lt;com.cms.basic.dao{IBaseDao.java[IBaseDao" modifiers="513" timestamp="1508521458000"/>
+<typeInfo handle="=cms-web-project/src\/main\/java&lt;com.cms.basic.dao{IBaseDao.java[IBaseDao" modifiers="513" timestamp="1514437465000"/>
 <typeInfo handle="=cms-web-project/src\/main\/java&lt;com.cms.core.dao{AttachmentDao.java[AttachmentDao" modifiers="1" timestamp="1513090154000"/>
-<typeInfo handle="=cms-web-project/src\/main\/java&lt;com.cms.service{ITopicService.java[ITopicService" modifiers="513" timestamp="1513380350000"/>
+<typeInfo handle="=cms-web-project/src\/main\/java&lt;com.cms.service{ITopicService.java[ITopicService" modifiers="513" timestamp="1514352392000"/>
+<typeInfo handle="=cms-web-project/\/home\/wr\/.m2\/repository\/javax\/servlet\/javax.servlet-api\/3.1.0\/javax.servlet-api-3.1.0.jar&lt;javax.servlet.http(HttpSessionListener.class[HttpSessionListener" modifiers="1537" timestamp="1511298182000"/>
 </typeInfoHistroy>

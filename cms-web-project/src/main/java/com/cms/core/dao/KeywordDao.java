@@ -110,5 +110,12 @@ public class KeywordDao extends BaseDao<Keyword> implements IKeywordDao {
 		return this.listByAlias(hql, alias);
 	}
 
+	@Override
+	public List<Keyword> listKeywordByCon(String content) {
+		String hql="from Keyword where name like '%"+content+"%'";
+		
+		return this.list(hql);
+	}
+
 	
 }

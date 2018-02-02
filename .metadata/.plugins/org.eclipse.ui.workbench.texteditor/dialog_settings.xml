@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="unaudits" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="unaudits"/>
+			<item value="addOrUpdate"/>
+			<item value="channel"/>
+			<item value="add"/>
 			<item value="delete"/>
-			<item value="getSession"/>
-			<item value="sv"/>
-			<item value="ROLE_PUBLISH"/>
-			<item value="unauditList"/>
-			<item value="allAuths"/>
-			<item value="allActions"/>
-			<item value="List&lt;Attachment&gt; attachments = this.getSession().createQuery(hql)."/>
+			<item value="channelPicId"/>
+			<item value="indexPic"/>
+			<item value="dwrService"/>
 		</list>
 		<list key="replacehistory">
 			<item value="ROLE_PUBLISHER"/>
@@ -25,7 +25,7 @@
 		<item value="358" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="482" key="DIALOG_HEIGHT"/>
-		<item value="1139" key="DIALOG_X_ORIGIN"/>
-		<item value="184" key="DIALOG_Y_ORIGIN"/>
+		<item value="1350" key="DIALOG_X_ORIGIN"/>
+		<item value="317" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

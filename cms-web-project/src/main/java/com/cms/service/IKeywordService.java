@@ -36,4 +36,6 @@ public interface IKeywordService {
 	 */
 	
 	public List<Keyword> getMaxTimesKeyword(int nums);
+	
+	public List<String> listKeywordByCon(String name);
 }

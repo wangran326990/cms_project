@@ -3,8 +3,10 @@ package com.cms.basic.util;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -28,13 +30,17 @@ public class AuthUtil {
 				for(Method method: methods){
 					if(!method.isAnnotationPresent(AuthMethod.class)) continue;
 					AuthMethod am = method.getAnnotation(AuthMethod.class);
-					String role = am.role();
-					Set<String> actions = auths.get(role);
-					if(actions ==null){
-						actions = new HashSet<String>();
-						auths.put(role, actions);
+					String r = am.role();
+					List<String> roles =AuthUtil.getRoleList(r);
+					for(String role : roles){
+						Set<String> actions = auths.get(role);
+						if(actions ==null){
+							actions = new HashSet<String>();
+							auths.put(role, actions);
+						}
+						actions.add(pc+"."+method.getName());
 					}
-					actions.add(pc+"."+method.getName());
+					
 						
 				}
 				
@@ -61,6 +67,12 @@ public class AuthUtil {
 		return fs;
 	}
 	
+	private static List<String> getRoleList(String role){
+		 
+		 List<String> roles = Arrays.asList(role.split(","));
+		 return roles;
+
+	}
 //	private static void getAllMethodFromClass(Class clz){
 //		
 //	}

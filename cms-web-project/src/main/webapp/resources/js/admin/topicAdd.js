@@ -39,7 +39,9 @@ $(function(){
 		formData:{"sid":$("#sid").val()},
 		fileTypeExts:"*.jpg;*.gif;*.png;*.doc;*.docx;*.txt;*.xls;*.xlsx;*.rar;*.zip;*.pdf;*.flv;*.swf",
 		onUploadSuccess:function(file, data, response) {
+			
 			var ao = $.parseJSON(data);
+			console.log(ao);
 			var suc = $.ajaxCheck(ao);
 			if(suc) {
 				var node = createAttachNode(ao.obj);
@@ -70,7 +72,13 @@ $(function(){
 	}
 	$("#ok_attach").on("click",".indexPic",function(){
 		//alert($(this).val());
-		dwrService.updateIndexPic($(this).val());
+		//dwrService.updateIndexPic($(this).val());
+		var updateUrl = $("#ctx").val()+'/admin/attachment/updateIndexPic';
+		var id =$(this).val();
+		$.post(updateUrl,{'id':id},function(data){
+			
+		});
+		
 	});
 	$("#ok_attach").on("click",".insertAttach",function(){
 		var node = "";
@@ -84,18 +92,33 @@ $(function(){
 		editor.pasteHTML(node);
 	});
 	$("#ok_attach").on("click",".isAttach",function(){
-		dwrService.updateAttachInfo($(this).val());
+		//dwrService.updateAttachInfo($(this).val());
+		var updateUrl = $("#ctx").val()+'/admin/attachment/updateAttachInfo';
+		var id =$(this).val();
+		$.post(updateUrl,{'id':id},function(data){
+			
+		});
 	});
 	$("#ok_attach").on("click",".deleteAttach",function(){
 		var conf = confirm("确定删除附件信息吗？");
 		if(conf) {
 			var ad = this;
 			var id = $(this).attr("title");
-			dwrService.deleteAttach(id,function(data) {
-				$(ad).parent("td").parent("tr").remove();
-				//alert($("#xhe0_iframe").contents().find("#attach_"+id).html());
-				$("#xhe0_iframe").contents().find("#attach_"+id).remove();
-			});			
+//			dwrService.deleteAttach(id,function(data) {
+//				$(ad).parent("td").parent("tr").remove();
+//				//alert($("#xhe0_iframe").contents().find("#attach_"+id).html());
+//				$("#xhe0_iframe").contents().find("#attach_"+id).remove();
+//			});
+			var updateUrl = $("#ctx").val()+'/admin/attachment/deleteAttachment';
+			$.post(updateUrl,{'id':id},function(data){
+				if(data.result==1){
+					$(ad).parent("td").parent("tr").remove();
+					//alert($("#xhe0_iframe").contents().find("#attach_"+id).html());
+					$("#xhe0_iframe").contents().find("#attach_"+id).remove();
+				}else{
+					console.log("error appeared ");
+				}
+			});
 		}
 	});
 	$("#uploadFile").click(function() {

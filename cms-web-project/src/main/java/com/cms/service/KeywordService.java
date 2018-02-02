@@ -2,6 +2,7 @@ package com.cms.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 
@@ -74,9 +75,11 @@ public class KeywordService implements IKeywordService {
 		return kks;
 	}
 
-
-
-
+	@Override
+	public List<String> listKeywordByCon(String name) {
+		 List<Keyword> keywords = keywordDao.listKeywordByCon(name);
+		 return keywords.stream().map(keyword->keyword.getName()).collect(Collectors.toList());
+	}
 	
 
 }

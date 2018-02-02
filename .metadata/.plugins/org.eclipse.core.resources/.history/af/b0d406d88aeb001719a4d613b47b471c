@@ -1,8 +1,0 @@
-package com.cms.service;
-
-import com.cms.core.model.Keyword;
-
-public interface IKeywordService {
-	public void add(Keyword keyword);
-	public void saveOrUpdate(String name);
-}

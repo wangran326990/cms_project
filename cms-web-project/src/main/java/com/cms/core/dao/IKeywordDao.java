@@ -28,4 +28,6 @@ public interface IKeywordDao extends IBaseDao<Keyword>{
 	
 	
 	public void addOrUpdate(String name);
+	
+	public List<Keyword> listKeywordByCon(String content);
 }

@@ -58,8 +58,8 @@ $(function(){
 				<c:if test="${c.isIndex eq 1 }">是</c:if>
 				&nbsp;
 				</td>
-				<td><c:if test="${c.status eq 0 }">启用</c:if>
-				<c:if test="${c.status eq 1 }"><span class="emp">停用</span></c:if>
+				<td><c:if test="${c.status eq 1 }">启用</c:if>
+				<c:if test="${c.status eq 0 }"><span class="emp">停用</span></c:if>
 				&nbsp;</td>
 				<td class="centerTd">
 					<a href="<%=request.getContextPath() %>/admin/channel/update/${pid}/${c.id}" class="list_op">

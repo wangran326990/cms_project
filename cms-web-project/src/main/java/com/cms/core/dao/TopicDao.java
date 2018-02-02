@@ -36,8 +36,8 @@ public class TopicDao extends BaseDao<Topic> implements ITopicDao {
 
 	@Override
 	public Pager<Topic> find(Integer cid, String title, Integer status) {
-		this.find(null, cid, title, status);
-		return null;
+		
+		return this.find(null, cid, title, status);
 	}
 
 	@Override
@@ -62,12 +62,12 @@ public class TopicDao extends BaseDao<Topic> implements ITopicDao {
 			hql +=" and t.channel.id ="+cid;
 		}
 		
-		if(title!=null && title.trim().equals("")){
+		if(title!=null && !title.trim().equals("")){
 			hql +=" and t.title like '%"+title+"%'";
 		}
 		
 		if(status!=null){
-			hql +=" and t.statis ="+status;
+			hql +=" and t.status ="+status;
 		}
 		return hql;
 	}

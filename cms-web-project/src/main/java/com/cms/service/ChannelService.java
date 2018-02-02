@@ -95,4 +95,14 @@ public class ChannelService implements IChannelService {
 		channelDao.updateSort(ids);
 	}
 
+	@Override
+	public List<Channel> listChannelsByStatus(int status) {
+		return channelDao.listChannelsByStatus(status);
+	}
+
+	@Override
+	public List<ChannelTree> generatePublishedChannelTree() {
+		return channelDao.generatePublishedChannelTree();
+	}
+
 }

@@ -1,0 +1,25 @@
+package com.cms.dto;
+
+import java.util.Date;
+
+
+public class TopicDto {
+	private int id;
+
+	private String title;
+	private int channelPicId;
+	private String keyword;
+	private int status;
+	private int recommend;
+	private String content;
+	private String summary;
+	private String publishName;
+	private Date publishDate;
+	private Date createDate;
+	private String cname;
+	/**
+	 * 文章的作者名称，用来显示用户的昵称，冗余字段
+	 */
+	private String author;
+
+}

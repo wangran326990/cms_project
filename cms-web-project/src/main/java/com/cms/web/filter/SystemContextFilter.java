@@ -28,11 +28,13 @@ public class SystemContextFilter implements Filter{
 				offset = Integer.parseInt(req.getParameter("pager.offset"));
 			} catch (NumberFormatException e) {}
 			try {
+				//((Object) req).getSession().getServletContext().getRealPath("/")
+				
 				SystemContext.setOrder(req.getParameter("order"));
 				SystemContext.setSort(req.getParameter("sort"));
 				SystemContext.setPageOffset(offset);
 				SystemContext.setPageSize(pageSize);
-				//SystemContext.setRealPath(((HttpServletRequest)req).getSession().getServletContext().getRealPath("/"));
+				SystemContext.setRealPath(req.getServletContext().getRealPath("/"));
 				chain.doFilter(req,resp);
 			} finally {
 				SystemContext.removeOrder();
