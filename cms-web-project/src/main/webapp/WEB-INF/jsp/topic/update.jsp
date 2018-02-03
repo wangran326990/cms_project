@@ -51,9 +51,18 @@
 		</tr>
 		<tr>
 			<td class="rightTd">文章栏目:</td>
-			<td class="leftTd">
-				<input type="text" readonly="readonly" name="cname" id="cname" value="${cname}"/>
-				<input type="text" readonly="readonly" id="cid" name="cid" value="${topicDto.cid }"/><sf:errors cssClass="errorContainer" path="cid"/>
+		<td class="leftTd">
+				<select name="cid" id="cid">
+				<option value="0">选择栏目</option>
+					<c:forEach items="${cs }" var="c">
+						<c:if test="${c.id  eq cid}">
+						<option value="${c.id }" selected="selected">${c.name }</option>
+						</c:if>
+						<c:if test="${c.id  ne cid}">
+						<option value="${c.id }">${c.name }</option>
+						</c:if>
+					</c:forEach>
+				</select>
 			</td>
 		</tr>
 		<c:choose>
@@ -144,7 +153,7 @@
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 					</c:if>
-					<td><input type='checkbox' value="${att.id }" name='isAttach' class='isAttach' <c:if test="${att.isAttach eq 1 }">checked="checked"</c:if>></td>
+					<td><input type='checkbox' value="${att.id }" name='isAttach' class='isAttach' <c:if test="${att.isAttached eq 1 }">checked="checked"</c:if>></td>
 					<td><a href='#' class='list_op insertAttach' title='${att.id}' isImg="${att.isImg }" 
 						name="${att.newName }" oldName="${att.oldName }">插入附件</a>&nbsp;<a href='#' title="${att.id }" class='list_op deleteAttach delete'>删除附件</a></td>
 				</tr>

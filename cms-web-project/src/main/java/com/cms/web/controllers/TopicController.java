@@ -186,12 +186,39 @@ public class TopicController {
 	@RequestMapping(value="/update/{id}",method=RequestMethod.GET)
 	@AuthMethod(role="ROLE_PUBLISHER")
 	public String update(@PathVariable int id,Model model) {
-		return null;
+		Topic t = topicService.load(id);
+		TopicDto td = new TopicDto(t);
+		String[] keywords=null;
+		 if(t.getKeyword()!=""){
+			 keywords = t.getKeyword().split("\\|");
+			 System.out.println(keywords);
+		 }
+		model.addAttribute("topicDto", td);
+		model.addAttribute("cs", channelService.listChannelsByStatus(-1));
+		model.addAttribute("cid", t.getChannel().getId());
+		model.addAttribute("keywords",keywords);
+		model.addAttribute("atts", attachmentService.listByTopic(id));
+		return "topic/update";
 	}
 	
 	@RequestMapping(value="/update/{id}",method=RequestMethod.POST)
-	public String update(@PathVariable int id,BindingResult br,String[]aks,Integer[] aids,HttpSession session) {
-		return null;
+	public String update(@Validated TopicDto topicDto, @PathVariable int id,BindingResult br,String[]aks,Integer[] aids,HttpSession session) {
+		if(br.hasErrors()){
+			return "redirect:/admin/topic/update/"+id;
+		}
+		Topic t= topicDto.getTopic();
+		User loginUser = (User)session.getAttribute("loginUser");
+		StringBuffer keys=new StringBuffer();
+		if(aks!=null && aks.length!=0){
+			for(String keyword : aks){
+				keys.append(keyword);
+				keys.append('|');
+				keywordService.addOrUpdate(keyword);
+			}
+			t.setKeyword(keys.substring(0, keys.length()-1));
+		}
+		topicService.update(t, topicDto.getCid(), aids);
+		return "redirect:/jsp/common/updateSuc.jsp";
 		
 	}
 	
