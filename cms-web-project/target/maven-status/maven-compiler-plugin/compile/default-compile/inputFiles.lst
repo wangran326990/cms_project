@@ -5,6 +5,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/errors/CmsException.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/AdminController.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/ITopicDao.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/BaseInfo.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/session/listener/CmsSessionListener.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/IKeywordDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/IUserDao.java
@@ -39,6 +40,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/RoleType.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IGroupService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/dto/AjaxObj.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/util/BaseInfoUtil.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/TopicController.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/RoleDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/RoleController.java
@@ -53,6 +55,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/dao/IBaseDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/GroupChannel.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/AttachmentService.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/BaseInfoController.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IUserService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/IGroupDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/KeywordDao.java

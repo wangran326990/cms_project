@@ -1,0 +1,21 @@
+package com.cms.core.test.util;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.cms.basic.util.BaseInfoUtil;
+
+public class BaseInfoUtilTest {
+
+	BaseInfoUtil biu = BaseInfoUtil.getInstance();
+	
+	@Test
+	public void testRead() {
+		System.out.println(biu.read().toString());
+		
+	}
+
+s
+
+}

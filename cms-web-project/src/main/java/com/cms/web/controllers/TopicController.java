@@ -123,7 +123,7 @@ public class TopicController {
 	@AuthMethod(role="ROLE_AUDIT")
 	public String changeStatus(@PathVariable int id,Integer status) {
 		topicService.updateStatus(id);
-		if(status==0){
+		if(status==1){
 			return "redirect:/admin/topic/audits";
 		}else{
 			return "redirect:/admin/topic/unaudits";
@@ -134,7 +134,7 @@ public class TopicController {
 	@AuthMethod(role="ROLE_PUBLISHER")
 	public String delete(@PathVariable int id,Integer status) {
 		topicService.delete(id);
-		if(status==0){
+		if(status==1){
 			return "redirect:/admin/topic/audits";
 		}else{
 			return "redirect:/admin/topic/unaudits";
@@ -169,6 +169,8 @@ public class TopicController {
 					keywordService.addOrUpdate(keyword);
 				}
 				t.setKeyword(keys.substring(0, keys.length()-1));
+			}else{
+				t.setKeyword("");
 			}
 			topicService.add(t, topicDto.getCid(), loginUser.getId(), aids);
 			return "redirect:/jsp/common/addSuc.jsp";
@@ -206,8 +208,9 @@ public class TopicController {
 		if(br.hasErrors()){
 			return "redirect:/admin/topic/update/"+id;
 		}
+		Topic topic = topicService.load(id);
 		Topic t= topicDto.getTopic();
-		User loginUser = (User)session.getAttribute("loginUser");
+		t.setAuthor(topic.getAuthor());
 		StringBuffer keys=new StringBuffer();
 		if(aks!=null && aks.length!=0){
 			for(String keyword : aks){
@@ -216,6 +219,8 @@ public class TopicController {
 				keywordService.addOrUpdate(keyword);
 			}
 			t.setKeyword(keys.substring(0, keys.length()-1));
+		}else{
+			t.setKeyword("");
 		}
 		topicService.update(t, topicDto.getCid(), aids);
 		return "redirect:/jsp/common/updateSuc.jsp";

@@ -27,6 +27,7 @@ com/cms/web/filter/LoginCheckFilter.class
 com/cms/basic/util/SecurityUtil.class
 com/cms/core/model/Channel.class
 com/cms/core/model/Group.class
+com/cms/web/controllers/BaseInfoController.class
 com/cms/core/dao/AttachmentDao.class
 com/cms/dto/AjaxObj.class
 com/cms/dto/TreeDto.class
@@ -34,6 +35,7 @@ com/cms/web/controllers/ChannelController.class
 com/cms/core/dao/IChannelDao.class
 com/cms/service/ITopicService.class
 com/cms/core/dao/KeywordDao.class
+com/cms/basic/util/BaseInfoUtil.class
 com/cms/core/model/Attachment.class
 com/cms/core/dao/IGroupDao.class
 com/cms/core/model/User.class
@@ -51,6 +53,7 @@ com/cms/core/model/Role.class
 com/cms/dto/UserDto.class
 com/cms/basic/dao/IBaseDao.class
 com/cms/core/dao/IUserDao.class
+com/cms/core/model/BaseInfo.class
 com/cms/core/model/GroupChannel.class
 com/cms/basic/util/AuthUtil.class
 com/cms/core/model/UserGroup.class
