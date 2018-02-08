@@ -8,6 +8,7 @@ com/cms/core/dao/TestTopicDao.class
 com/cms/service/TestUserService.class
 com/cms/core/dao/TestRoleDao.class
 com/cms/core/dao/TestUserDao.class
+com/cms/core/dao/TestCmsLinkDao.class
 com/cms/core/test/util/EntitiesHelper.class
 com/cms/core/test/util/BaseInfoUtilTest.class
 com/cms/basic/test/util/EntitiesHelper.class

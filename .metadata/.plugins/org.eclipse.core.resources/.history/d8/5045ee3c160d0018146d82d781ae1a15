@@ -1,0 +1,14 @@
+package com.cms.web.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/admin/pic")
+public class IndexPicController {
+	@RequestMapping("/indexPics")
+	public String listIndexPic(Model model){
+		
+	}
+}

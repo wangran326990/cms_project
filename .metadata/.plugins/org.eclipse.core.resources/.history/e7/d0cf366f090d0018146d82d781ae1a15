@@ -1,0 +1,24 @@
+package com.cms.core.dao;
+
+import java.util.List;
+
+import com.cms.basic.dao.BaseDao;
+import com.cms.basic.model.Pager;
+import com.cms.core.model.IndexPic;
+
+public class IndexPicDao extends BaseDao<IndexPic> implements IIndexPicDao{
+
+	@Override
+	public List<IndexPic> listIndexPicByNum(int num) {
+		
+		return null;
+	}
+
+	@Override
+	public Pager<IndexPic> findIndexPic() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

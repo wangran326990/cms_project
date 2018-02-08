@@ -1,0 +1,85 @@
+package com.cms.service;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import com.cms.basic.model.Pager;
+import com.cms.core.dao.IndexPicDao;
+import com.cms.core.model.IndexPic;
+
+public class IndexPicService implements IIndexPicService{
+	
+	private IndexPicDao IndexPicDao;
+	
+	
+	@Override
+	public void add(IndexPic indexPic) {
+		
+	}
+
+	@Override
+	public void update(IndexPic indexPic) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateStatus(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public IndexPic load(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<IndexPic> listIndexPicByNum(int num) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Pager<IndexPic> findIndexPic() {
+		return null;
+	}
+
+	@Override
+	public List<String> listAllIndexPicName() {
+		return null;
+	}
+
+	@Override
+	public void cleanNoUseIndexPic(List<String> pics) throws IOException {
+		
+	}
+
+	@Override
+	public Map<String, Integer> getMinAdnMaxPos() {
+		return null;
+	}
+
+	@Override
+	public void updatePos(int id, int oldPos, int newPos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public IndexPicDao getIndexPicDao() {
+		return IndexPicDao;
+	}
+
+	public void setIndexPicDao(IndexPicDao indexPicDao) {
+		IndexPicDao = indexPicDao;
+	}
+
+}

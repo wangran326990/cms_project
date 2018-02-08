@@ -1,0 +1,55 @@
+package com.cms.core.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import com.cms.basic.dao.BaseDao;
+import com.cms.basic.model.Pager;
+import com.cms.core.model.CmsLink;
+
+public class CmsLinkDao extends BaseDao<CmsLink> implements ICmsLinkDao {
+
+	
+
+	@Override
+	public Pager<CmsLink> findByType(String type) {
+		String hql;
+		Pager<CmsLink> links=null;
+		if(type==null){
+			hql = "from CmsLink";
+			hql+=" order by pos";
+			links=this.find(hql);
+		}
+		else{
+			hql = "from CmsLink where CmsLink.type Like %?%";
+			hql+=" order by pos";
+			links=this.find(hql, type);
+		}
+		return links;
+	}
+
+	@Override
+	public List<CmsLink> listByType(String type) {
+		
+		return this.list("from CmsLink where CmsLink.type=? order by pos", type);
+	}
+
+	@Override
+	public List<String> listAllType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Map<String, Integer> getMinAndMaxPos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updatePos(int id, int oldPos, int newPos) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

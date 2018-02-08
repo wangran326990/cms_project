@@ -1,0 +1,27 @@
+package com.cms.web.controllers;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cms.auth.AuthClass;
+import com.cms.service.ICmsLinkService;
+
+@Controller
+@AuthClass
+@RequestMapping("/admin/cmsLink")
+public class CmsLinkController {
+	private ICmsLinkService cmsLinkService;
+
+	public ICmsLinkService getCmsLinkService() {
+		return cmsLinkService;
+	}
+	
+	@Resource(name="cmsLinkService")
+	public void setCmsLinkService(ICmsLinkService cmsLinkService) {
+		this.cmsLinkService = cmsLinkService;
+	}
+	
+	
+}

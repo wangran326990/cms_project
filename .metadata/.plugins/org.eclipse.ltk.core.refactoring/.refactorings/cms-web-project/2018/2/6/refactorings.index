@@ -1,0 +1,7 @@
+1517860861614	Delete element
+1517867423828	Copy file
+1518032523705	Encapsulate field 'cmsLinkService'
+1518118719593	Rename type 'IndexPic'
+1518118757426	Rename type 'IIndexPic'
+1518122589763	Encapsulate field 'IndexPicDao'
+1518124835450	Encapsulate field 'indexPicService'

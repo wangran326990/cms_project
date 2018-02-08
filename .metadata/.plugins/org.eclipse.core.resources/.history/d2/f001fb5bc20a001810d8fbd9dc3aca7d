@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<t_cms_link id="1" title="url title 1" url="/link1/url", type="type1", new_win="0", url_id="urlId1", url_class="urlClassId1", pos="1"/>
+	<t_cms_link id="2" title="url title 2" url="/link2/url", type="type1", new_win="1", url_id="urlId2", url_class="urlClassId2", pos="2"/>
+	<t_cms_link id="3" title="url title 3" url="/link3/url", type="type1", new_win="1", url_id="urlId3", url_class="urlClassId3", pos="3"/>
+	<t_cms_link id="4" title="url title 4" url="/link4/url", type="type2", new_win="1", url_id="urlId4", url_class="urlClassId4", pos="4"/>
+	<t_cms_link id="5" title="url title 5" url="/link5/url", type="type2", new_win="0", url_id="urlId5", url_class="urlClassId5", pos="5"/>
+	<t_cms_link id="6" title="url title 6" url="/link6/url", type="type3", new_win="0", url_id="urlId6", url_class="urlClassId6", pos="6"/>
+</dataset>

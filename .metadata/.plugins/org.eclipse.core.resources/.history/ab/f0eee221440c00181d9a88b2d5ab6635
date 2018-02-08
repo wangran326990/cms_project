@@ -1,0 +1,40 @@
+package com.cms.web.controllers;
+
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cms.auth.AuthClass;
+import com.cms.service.ICmsLinkService;
+
+@Controller
+@AuthClass
+@RequestMapping("/admin/cmsLink")
+public class CmsLinkController {
+	private ICmsLinkService cmsLinkService;
+
+	public ICmsLinkService getCmsLinkService() {
+		return cmsLinkService;
+	}
+	
+	@Resource(name="cmsLinkService")
+	public void setCmsLinkService(ICmsLinkService cmsLinkService) {
+		this.cmsLinkService = cmsLinkService;
+	}
+	
+	@RequestMapping("/links")
+	public String list(Model model,String type) {
+		model.addAttribute("datas", cmsLinkService.findByType(type));
+		model.addAttribute("types",cmsLinkService.listAllType());
+		Map<String,Integer> m = cmsLinkService.getMinAndMaxPos();
+		model.addAttribute("min", m.get("min"));
+		model.addAttribute("max",m.get("max"));
+		return "cmsLink/list";
+	}
+	
+	
+}

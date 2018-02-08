@@ -1,0 +1,10 @@
+package com.cms.core.dao;
+
+import java.util.List;
+
+import com.cms.basic.dao.IBaseDao;
+import com.cms.core.model.IndexPic;
+
+public interface IIndexPicDao extends IBaseDao<IndexPic>{
+	public List<IndexPic> listIndexPicByNum(int num);
+}

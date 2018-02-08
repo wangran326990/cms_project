@@ -1,0 +1,34 @@
+package com.cms.core.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.cms.basic.dao.BaseDao;
+import com.cms.basic.model.Pager;
+import com.cms.core.model.IndexPic;
+
+@Repository(value="indexPicDao")
+public class IndexPicDao extends BaseDao<IndexPic> implements IIndexPicDao{
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<IndexPic> listIndexPicByNum(int num) {
+		String hql = "from IndexPic";
+		return this.getSession().createQuery(hql).setFirstResult(0).setMaxResults(num).list();
+	}
+
+	@Override
+	public Pager<IndexPic> findIndexPic() {
+		// TODO Auto-generated method stub
+		return this.find("from IndexPic");
+	}
+
+	@Override
+	public List<String> listAllIndexPicName() {
+		String hql = "select ip.name from IndexPic ip";
+		return null;
+	}
+	
+	
+}

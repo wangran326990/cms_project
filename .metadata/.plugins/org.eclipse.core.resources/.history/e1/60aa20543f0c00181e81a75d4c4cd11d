@@ -1,0 +1,13 @@
+package com.cms.web.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cms.auth.AuthClass;
+
+@Controller
+@AuthClass
+@RequestMapping("/admin/cmsLink")
+public class CmsLinkController {
+	
+}

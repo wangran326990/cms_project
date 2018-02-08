@@ -1,15 +1,18 @@
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/IndexPicDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/AttachmentDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/KeywordService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/GroupDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/dto/UserDto.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/errors/CmsException.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/AdminController.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/CmsLinkController.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/ITopicDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/BaseInfo.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/session/listener/CmsSessionListener.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/IKeywordDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/IUserDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/dao/BaseDao.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/IIndexPicDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/Topic.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/GroupService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/GroupController.java
@@ -24,6 +27,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/Group.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/Keyword.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/TopicDao.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/ICmsLinkDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/ChannelDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/User.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/UserDao.java
@@ -34,9 +38,13 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/model/Pager.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/util/AuthUtil.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/UserRole.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IndexPicService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/IAttachmentDao.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/CmsLinkService.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/IndexPicController.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IRoleService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/LoginController.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/IndexPic.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/RoleType.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IGroupService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/dto/AjaxObj.java
@@ -50,6 +58,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/auth/AuthMethod.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/IRoleDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/ChannelTree.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/CmsLink.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IAttachmentService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/ChannelController.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/dao/IBaseDao.java
@@ -62,6 +71,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/UserController.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/UserService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/dto/TopicDto.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/IndexController.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/filter/LoginCheckFilter.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/util/EnumUtil.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/ChannelType.java
@@ -70,6 +80,9 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/Attachment.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/ChannelService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/util/JsonUtil.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/ICmsLinkService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/RoleService.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IIndexPicService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/interceptor/AuthInterceptor.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/IChannelDao.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/CmsLinkDao.java

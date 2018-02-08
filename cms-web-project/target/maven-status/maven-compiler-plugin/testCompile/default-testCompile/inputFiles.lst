@@ -14,6 +14,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/core/dao/TestChannelDao.java
 /home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/basic/dao/IUserDao.java
 /home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/service/TestUserService.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/core/dao/TestCmsLinkDao.java
 /home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/core/dao/TestUserDao.java
 /home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/core/dao/TestKeywordDao.java
 /home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/basic/test/util/DbUtil.java

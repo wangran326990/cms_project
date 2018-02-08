@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cms.basic.model.Pager;
 import com.cms.basic.model.User;
@@ -23,7 +24,7 @@ public class UserDao extends BaseDao<User> implements IUserDao{
 		return super.findBySql(sql, args, clz, hasEntity);
 	}
 
-	@Override
+	@Override	
 	public Pager<User> findUserBySql(String sql, Object[] args, Map<String, Object> alias, Class<User> clz,
 			boolean hasEntity) {
 		return super.findBySql(sql, args, alias, clz, hasEntity);

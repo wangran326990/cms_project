@@ -1,0 +1,8 @@
+package com.cms.core.dao;
+
+import com.cms.basic.dao.BaseDao;
+import com.cms.core.model.IndexPic;
+
+public class IndexPicDao extends BaseDao<IndexPic> implements IIndexPicDao{
+	
+}

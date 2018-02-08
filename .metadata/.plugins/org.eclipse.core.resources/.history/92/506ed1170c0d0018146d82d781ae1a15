@@ -1,0 +1,9 @@
+package com.cms.service;
+
+import com.cms.core.model.IndexPic;
+
+public interface IIndexPicService {
+	public void add(IndexPic indexPic);
+	
+	public void update(IndexPic indexPic);
+}
