@@ -1,0 +1,88 @@
+package com.freemarker.demo;
+
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Test;
+
+import freemarker.core.ParseException;
+import freemarker.template.Configuration;
+import freemarker.template.MalformedTemplateNameException;
+import freemarker.template.Template;
+import freemarker.template.TemplateException;
+import freemarker.template.TemplateNotFoundException;
+
+
+public class TestFreeMarker {
+	@Test
+	public void testHello(){
+		Configuration cfg = new Configuration();
+		
+		//set classpath loading path and all ftl template location.
+		cfg.setClassForTemplateLoading(TestFreeMarker.class, "/ftl");
+		
+		//3. get all the template file.
+		try {
+			Template temp = cfg.getTemplate("hello.ftl");
+			Map<String, Object> root = new HashMap<>();
+			root.put("username", "wangran");
+			try {
+				temp.process(root, new PrintWriter(System.out));
+			} catch (TemplateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (TemplateNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MalformedTemplateNameException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@Test
+	public void testHello02(){
+		Configuration cfg = new Configuration();
+		
+		//set classpath loading path and all ftl template location.
+		cfg.setClassForTemplateLoading(TestFreeMarker.class, "/ftl");
+		
+		//3. get all the template file.
+		try {
+			Template temp = cfg.getTemplate("hello02.ftl");
+			Map<String, Object> root = new HashMap<>();
+			root.put("username", "wangran");
+			try {
+				temp.process(root, new FileWriter(System.out));
+			} catch (TemplateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (TemplateNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MalformedTemplateNameException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

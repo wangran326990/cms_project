@@ -64,7 +64,13 @@ $(function(){
 				$("#indexPicView").prev("#pc").remove();
 				$("#indexPicView").html("<img src='"+ctx+"/resources/indexPic/"+newName+"'/>");
 				$("#newName").val(newName);
-			}
-		},"json")
+				$("#oldName").val(oldName);
+					if($("#currentIndexPic").length>0){
+						var newPicPath =ctx+"/resources/indexPic/"+newName;
+						$("#currentIndexPic").attr("src",newPicPath);
+					}
+					
+				}
+		},"json");
 	}
 });

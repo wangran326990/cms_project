@@ -1,0 +1,10 @@
+package com.freemarker.demo;
+
+import org.junit.Test;
+
+public class TestFreeMarker {
+	@Test
+	public void testHello(){
+		
+	}
+}

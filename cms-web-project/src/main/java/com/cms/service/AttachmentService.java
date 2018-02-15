@@ -28,6 +28,7 @@ public class AttachmentService implements IAttachmentService {
 	
 	private IAttachmentDao attachmentDao;
 	public final static String UPLOAD_PATH="/resources/upload/";
+	//public final static String INDEX_PIC_UPLOAD_PATH = "/resources/indexPic/";
 	private final static int IMAGE_WIDTH =900;
 	private final static int THUMBNAIL_WIDTH =100;
 	private final static int THUMBNAIL_HEIGH =80;
@@ -45,8 +46,11 @@ public class AttachmentService implements IAttachmentService {
 	public static void deleteAttachFiles(Attachment a){
 		
 		String realPath = SystemContext.getRealPath();
-		realPath +=UPLOAD_PATH;
-		String thumbnailPath = SystemContext.getRealPath()+UPLOAD_PATH+"thumbnail/";
+		String thumbnailPath;
+		
+			realPath +=UPLOAD_PATH;
+			thumbnailPath = SystemContext.getRealPath()+UPLOAD_PATH+"thumbnail/";
+		
 		System.out.println(realPath);
 		System.out.println(thumbnailPath);
 		new File(realPath + a.getNewName()).delete();
@@ -112,9 +116,9 @@ public class AttachmentService implements IAttachmentService {
 		//throw new IOException("test io exception");
 		
 		String realPath = SystemContext.getRealPath();
-		System.out.println(realPath);
-		String path = realPath+"/resources/upload/";
-		String thumbPath = realPath+"/resources/upload/thumbnail/";
+		//System.out.println(realPath);
+		String path = realPath+UPLOAD_PATH;
+		String thumbPath = realPath+UPLOAD_PATH+"thumbnail/";
 		File fp = new File(path);
 		File tfp = new File(thumbPath);
 		path +=a.getNewName();
@@ -167,4 +171,11 @@ public class AttachmentService implements IAttachmentService {
 		}
 	}
 
+	@Override
+	public Pager<Attachment> listAllIndexPic() {
+		
+		return attachmentDao.listAllPic();
+	}
+	
+	
 }

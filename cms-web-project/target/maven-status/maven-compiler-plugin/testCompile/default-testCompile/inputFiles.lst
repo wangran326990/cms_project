@@ -6,6 +6,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/core/test/util/EntitiesHelper.java
 /home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/basic/test/util/AbstractDbUnitTestCase.java
 /home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/core/dao/TestAttachment.java
+/home/wr/workspace/CMS/cms-web-project/src/test/java/com/freemarker/demo/TestFreeMarker.java
 /home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/core/dao/TestRoleDao.java
 /home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/core/dao/TestGroupDao.java
 /home/wr/workspace/CMS/cms-web-project/src/test/java/com/cms/service/TestGroupService.java

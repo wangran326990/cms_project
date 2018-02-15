@@ -1,0 +1,29 @@
+package com.cms.basic.util;
+
+import java.io.IOException;
+
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+
+public class FreemarkerUtil {
+	private static final FreemarkerUtil FREE_MARKER= new FreemarkerUtil();
+	private static final Configuration cfg = new Configuration();	
+	
+	private FreemarkerUtil(){
+		
+	}
+	
+	public static FreemarkerUtil getInstance(String pname){
+		cfg.setClassForTemplateLoading(FreemarkerUtil.class, pname);
+		return FREE_MARKER;
+	}
+	
+	public Template getTemplate(String fname){
+		try {
+			return cfg.getTemplate(fname);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

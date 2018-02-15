@@ -21,4 +21,6 @@ public interface IAttachmentDao extends IBaseDao<Attachment> {
 	public Pager<Attachment> findChannelPic(int cid);
 	
 	public List<Attachment> listAttachedByTopic(int tid);
+	
+	public Pager<Attachment> listAllPic();
 }

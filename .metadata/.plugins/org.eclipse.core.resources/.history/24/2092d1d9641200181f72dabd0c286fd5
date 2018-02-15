@@ -1,0 +1,44 @@
+package com.freemarker.demo;
+
+
+
+import java.io.IOException;
+import java.util.HashMap;
+
+import org.junit.Test;
+
+import freemarker.core.ParseException;
+import freemarker.template.Configuration;
+import freemarker.template.MalformedTemplateNameException;
+import freemarker.template.Template;
+import freemarker.template.TemplateNotFoundException;
+
+
+public class TestFreeMarker {
+	@Test
+	public void testHello(){
+		Configuration cfg = new Configuration();
+		
+		//set classpath loading path and all ftl template location.
+		cfg.setClassForTemplateLoading(TestFreeMarker.class, "/ftl");
+		
+		//3. get all the template file.
+		try {
+			Template temp = cfg.getTemplate("hello.ftl");
+			Map<String, Object> root = new HashMap<>();
+		} catch (TemplateNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MalformedTemplateNameException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

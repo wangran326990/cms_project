@@ -34,6 +34,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/Role.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/Channel.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/util/SecurityUtil.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IIndexService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IChannelService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/model/Pager.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/util/AuthUtil.java
@@ -46,6 +47,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/LoginController.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/IndexPic.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/RoleType.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/util/FreemarkerUtil.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IGroupService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/dto/AjaxObj.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/util/BaseInfoUtil.java
@@ -61,6 +63,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/CmsLink.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IAttachmentService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/ChannelController.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IndexService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/dao/IBaseDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/GroupChannel.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/AttachmentService.java
@@ -71,7 +74,6 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/UserController.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/UserService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/dto/TopicDto.java
-/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/controllers/IndexController.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/filter/LoginCheckFilter.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/basic/util/EnumUtil.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/model/ChannelType.java
@@ -83,6 +85,7 @@
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/ICmsLinkService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/RoleService.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/service/IIndexPicService.java
+/home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/dto/IndexPicDto.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/web/interceptor/AuthInterceptor.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/IChannelDao.java
 /home/wr/workspace/CMS/cms-web-project/src/main/java/com/cms/core/dao/CmsLinkDao.java

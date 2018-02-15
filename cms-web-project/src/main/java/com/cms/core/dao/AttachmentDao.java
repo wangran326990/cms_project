@@ -77,4 +77,10 @@ public class AttachmentDao extends BaseDao<Attachment> implements IAttachmentDao
 		return this.list(hql, tid);
 	}
 
+	@Override
+	public Pager<Attachment> listAllPic() {
+		String hql ="from Attachment a where a.isImg=? and a.topic.status=1";
+		return this.find(hql,1);
+	}
+
 }

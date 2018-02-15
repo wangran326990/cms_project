@@ -46,7 +46,7 @@
 		<tr>
 			<td class="rightTd" width="120px">当前图片:</td>
 			<td>
-				<img src="<%=request.getContextPath() %>/resources/indexPic/${indexPic.newName}"/>
+				<img id="currentIndexPic" src="<%=request.getContextPath() %>/resources/indexPic/${indexPic.newName}"/>
 			</td>
 		</tr>
 		<tr>

@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="updatePos" key="selection"/>
+		<item value="updateIndexPic" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="updatePos"/>
-			<item value="@Tran"/>
-			<item value="get"/>
-			<item value="txManager"/>
-			<item value="delete"/>
-			<item value="unaudits"/>
-			<item value="addOrUpdate"/>
-			<item value="channel"/>
+			<item value="updateIndexPic"/>
+			<item value="Suc"/>
+			<item value="Sus"/>
+			<item value="session"/>
+			<item value="update"/>
+			<item value="input"/>
+			<item value="AjaxObj"/>
+			<item value="isNewPic"/>
 		</list>
 		<list key="replacehistory">
 			<item value="ROLE_PUBLISHER"/>

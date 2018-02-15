@@ -1,0 +1,17 @@
+package com.freemarker.demo;
+
+
+
+import org.junit.Test;
+
+import freemarker.template.Configuration;
+
+
+public class TestFreeMarker {
+	@Test
+	public void testHello(){
+		Configuration cfg = new Configuration();
+		cfg.setClassForTemplateLoading(TestFreeMarker.class, basePackagePath);
+		
+	}
+}

@@ -1,0 +1,21 @@
+package com.cms.basic.util;
+
+import freemarker.template.Configuration;
+
+public class FreemarkerUtil {
+	private static final FreemarkerUtil FREE_MARKER= new FreemarkerUtil();
+	private static final Configuration cfg = new Configuration();	
+	
+	private FreemarkerUtil(){
+		
+	}
+	
+	public static FreemarkerUtil getInstance(String pname){
+		cfg.setClassForTemplateLoading(FreemarkerUtil.class, pname);
+		return FREE_MARKER;
+	}
+	
+	public Template getTemplate(){
+		
+	}
+}

@@ -246,7 +246,6 @@ public class TopicController {
 	@AuthMethod(role="ROLE_PUBLISHER")
 	public void upload(MultipartFile attach,HttpServletResponse resp) throws IOException {
 	//System.out.println(attach.getOriginalFilename());
-		resp.setContentType("test/plain;charset=utf-8");
 		resp.setContentType("text/plain");
 		AjaxObj ao = null;
 		Gson gson = new Gson();
@@ -267,7 +266,6 @@ public class TopicController {
 			att.setTopic(null);
 			att.setSize(attach.getSize());
 			attachmentService.add(att, attach.getInputStream());
-			System.out.println(att.getId());
 			ao =  new AjaxObj(1,null, att);
 		} catch (IOException e) {
 			e.printStackTrace();

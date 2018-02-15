@@ -2,6 +2,7 @@ package com.cms.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -22,6 +23,7 @@ public class IndexPicService implements IIndexPicService{
 	
 	@Override
 	public void add(IndexPic indexPic) {
+		indexPic.setCreateDate(new Date());
 		indexPicDao.add(indexPic);
 	}
 

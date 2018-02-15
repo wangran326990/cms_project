@@ -1,8 +1,0 @@
-package com.cms.core.test.util;
-
-public class Snippet {
-	public static void main(String[] args) {
-		 多线程java面试题
-	}
-}
-

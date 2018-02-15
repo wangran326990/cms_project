@@ -10,13 +10,16 @@
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/core/jquery.cms.core.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/admin/main.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/admin/inc.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/dwr/engine.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/dwr/interface/dwrService.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$(".isNewPic").click(function(){
-			dwrService.updateIndexPic($(this).val());
-		})
+			//dwrService.updateIndexPic($(this).val());
+			var url = $("#ctx").val() + "/admin/pic/updateIndexPic";
+			$.post(url, {'pid':$(this).val()}, function(data){
+				if(data.result == 1)
+					console.log('success');
+			});
+		});
 	});
 </script>
 </head>
@@ -25,6 +28,7 @@
 	<h3 class="admin_link_bar">
 		<jsp:include page="inc.jsp"></jsp:include>
 	</h3>
+	<input type="hidden" id="ctx" value=<%=request.getContextPath()%>/>
 	<table width="800" cellspacing="0" cellPadding="0" id="listTable">
 		<thead>
 		<tr>

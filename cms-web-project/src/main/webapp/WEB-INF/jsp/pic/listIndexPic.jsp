@@ -46,9 +46,15 @@ $(function(){
 		var np = $(this).prev("input").val();
 		if(op!=np) {
 			//通过dwr更新节点
-			dwrService.updatePicPos(id,op,np,function(){
-				window.location.reload();
+			//dwrService.updatePicPos(id,op,np,function(){
+			//	window.location.reload();
+			//});
+			var url = $("#ctx").val() + "/admin/pic/updatePicPos";
+			
+			$.post(url, {'id':id, 'op':op, 'np':np}, function(data){
+					window.location.reload();
 			});
+			
 		}
 		$(this).parent("span").prev("a.setPos").on("click",setPos);
 		$(this).parent("span").remove();
@@ -58,6 +64,7 @@ $(function(){
 </head>
 <body>
 <div id="content">
+<input type="hidden" id="ctx" value=<%=request.getContextPath() %>/>
 <input type="hidden" id="maxPos" value="${max }"/>
 <input type="hidden" id="minPos" value="${min }"/>
 	<h3 class="admin_link_bar">
@@ -92,7 +99,7 @@ $(function(){
 				</td>
 				<td>
 					<a href="deleteIndexPic/${pic.id }" class="list_op delete">删除</a>
-					<a href="javascript:openWin('<%=request.getContextPath() %>/admin/pic/updateIndexPic/${pic.id }','updatePic')" class="list_op">更新</a>
+					<a href="javascript:openWin('<%=request.getContextPath() %>/admin/pic/updateIndexPic/${pic.id}','updatePic')" class="list_op">更新</a>
 				&nbsp;
 				</td>
 			</tr>

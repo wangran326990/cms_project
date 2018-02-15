@@ -1,0 +1,13 @@
+package com.cms.basic.util;
+
+public class FreemarkerUtil {
+	private static final FreemarkerUtil FREE_MARKER= new FreemarkerUtil();
+	
+	private FreemarkerUtil(){
+		
+	}
+	
+	public static FreemarkerUtil getInstance(){
+		
+	}
+}

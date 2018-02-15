@@ -125,9 +125,15 @@ public final class listIndexPic_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\t\tvar np = $(this).prev(\"input\").val();\r\n");
       out.write("\t\tif(op!=np) {\r\n");
       out.write("\t\t\t//通过dwr更新节点\r\n");
-      out.write("\t\t\tdwrService.updatePicPos(id,op,np,function(){\r\n");
-      out.write("\t\t\t\twindow.location.reload();\r\n");
+      out.write("\t\t\t//dwrService.updatePicPos(id,op,np,function(){\r\n");
+      out.write("\t\t\t//\twindow.location.reload();\r\n");
+      out.write("\t\t\t//});\r\n");
+      out.write("\t\t\tvar url = $(\"#ctx\").val() + \"/admin/pic/updatePicPos\";\r\n");
+      out.write("\t\t\t\r\n");
+      out.write("\t\t\t$.post(url, {'id':id, 'op':op, 'np':np}, function(data){\r\n");
+      out.write("\t\t\t\t\twindow.location.reload();\r\n");
       out.write("\t\t\t});\r\n");
+      out.write("\t\t\t\r\n");
       out.write("\t\t}\r\n");
       out.write("\t\t$(this).parent(\"span\").prev(\"a.setPos\").on(\"click\",setPos);\r\n");
       out.write("\t\t$(this).parent(\"span\").remove();\r\n");
@@ -137,6 +143,9 @@ public final class listIndexPic_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("<div id=\"content\">\r\n");
+      out.write("<input type=\"hidden\" id=\"ctx\" value=");
+      out.print(request.getContextPath() );
+      out.write("/>\r\n");
       out.write("<input type=\"hidden\" id=\"maxPos\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${max }", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"/>\r\n");
@@ -222,7 +231,7 @@ public final class listIndexPic_jsp extends org.apache.jasper.runtime.HttpJspBas
             out.write("\t\t\t\t\t<a href=\"javascript:openWin('");
             out.print(request.getContextPath() );
             out.write("/admin/pic/updateIndexPic/");
-            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pic.id }", java.lang.String.class, (PageContext)_jspx_page_context, null));
+            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pic.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
             out.write("','updatePic')\" class=\"list_op\">更新</a>\r\n");
             out.write("\t\t\t\t&nbsp;\r\n");
             out.write("\t\t\t\t</td>\r\n");

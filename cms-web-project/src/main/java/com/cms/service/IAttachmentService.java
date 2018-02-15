@@ -31,4 +31,6 @@ public interface IAttachmentService {
 	
 	public void updateIndexPic(int aid);
 	
+	public Pager<Attachment> listAllIndexPic();
+	
 }

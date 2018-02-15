@@ -36,6 +36,7 @@
 			<td colspan="2">
 				<input type="file" id="indexPic" name="indexPic"/>
 				<input id="newName" name="newName" readonly/>
+				<input id="oldName" name="oldName" type="hidden"/>
 			</td>
 		</tr>
 		<tr>
